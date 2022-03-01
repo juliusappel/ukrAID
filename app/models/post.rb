@@ -1,6 +1,7 @@
 class Post < ApplicationRecord
   belongs_to :user
   has_many :addresses, dependent: :destroy
+  has_many_attached :photos, dependent: :destroy
 
   # Validates necessary post elements
   validates :title, :content, :vote_score, :pending, presence: true
