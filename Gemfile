@@ -65,3 +65,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Add map functionality
 gem 'geocoder'
+
+# Add image upload to Cloudinary
+gem 'cloudinary'
