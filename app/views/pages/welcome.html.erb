@@ -1,20 +1,28 @@
 <div class="welcome">
 
-    <div id="flag1">
-      <p>Ukraine / Україна</p>
-      <div id="flag_top">
+  <%= link_to home_path(@pages) do %>
+    <div>
+      <div id="flag1">
+        <p>Ukraine / Україна</p>
+        <div id="flag_top">
+        </div>
+        <div id="flag_bottom">
+        </div>
+        <p class="mt-3">I need help</p>
       </div>
-      <div id="flag_bottom">
-      </div>
-      <p class="mt-3">I need help</p>
     </div>
+  <% end %>
 
-    <div id="flag2">
-      <p>Rest of the world</p>
-      <div id="flag_bg">
-        <%= image_tag 'logo_favicon.png' %>
+  <%= link_to home_path(@pages) do %>
+    <div>
+      <div id="flag2">
+        <p>Rest of the world</p>
+        <div id="flag_bg">
+          <%= image_tag 'logo_favicon.png' %>
+        </div>
+        <p class="mt-3">I want to support</p>
       </div>
-      <p class="mt-3">I want to support</p>
     </div>
+  <% end %>
 
 </div>

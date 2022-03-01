@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
-  background: white;
+  background: $mainblue;
+  height: 6rem;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -9,4 +10,29 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
+  margin-left: 1rem;
+}
+
+.navbar-toggler {
+  margin-right: 1rem;
+}
+
+.category-dropdown {
+  background-color: $ukr_blue;
+  border-radius: 30px;
+  padding: 10px 40px;
+
+  span {
+    color: white;
+    font-size: 18px;
+  }
+}
+
+.navbar-light .navbar-toggler {
+  color: rgba(255, 255, 255, 1);
+  border-color: transparent;
+}
+
+.navbar-toggler-icon {
+  filter: invert(1);
 }
