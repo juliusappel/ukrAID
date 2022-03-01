@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
   belongs_to :user
+  has_many :addresses, dependent: :destroy
 
   # Validates necessary post elements
   validates :title, :content, :vote_score, :pending, presence: true
@@ -11,9 +12,9 @@ class Post < ApplicationRecord
   validates :vote_score, numericality: { only_integer: true }
 
   # Validates phone number (Regex source: https://phoneregex.com/)
-  validates :phone_number, format: { with: /\+(9[976]\d|8[987530]\d|6[987]\d|
+  validates :phone_number, format: { with: %r{\+(9[976]\d|8[987530]\d|6[987]\d|
     5[90]\d|42\d|3[875]\d|2[98654321]\d|9[8543210]|8[6421]|6[6543210]|5[87654321]|
-    4[987654310]|3[9643210]|2[70]|7|1)\d{1,14}$/, allow_blank: true }
+    4[987654310]|3[9643210]|2[70]|7|1)\d{1,14}\z}, allow_blank: true }
 
   # Validates email
   validates :email, format: { with: /A[^@s] @[^@s] z/, allow_blank: true }
