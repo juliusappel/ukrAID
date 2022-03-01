@@ -1,0 +1,60 @@
+.welcome {
+  position: relative;
+  background-color: $mainblue;
+  width: 100vw;
+  height: 100vh;
+}
+
+#flag1 {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  p {
+    text-align: center;
+    color: white;
+    font-weight: bolder;
+    font-size: 20px;
+  }
+
+  #flag_top {
+    background-color: $ukr_blue;
+    height: 3.5rem;
+    width: 12rem;
+  }
+
+  #flag_bottom {
+    background-color: $ukr_yellow;
+    height: 3.5rem;
+    width: 12rem;
+  }
+}
+
+#flag2 {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  p {
+    text-align: center;
+    color: white;
+    font-weight: bolder;
+    font-size: 20px;
+  }
+
+  #flag_bg {
+    background-color: $navy;
+    height: 7rem;
+    width: 12rem;
+  }
+
+  img {
+    position: absolute;
+    width: 4rem;
+    top: 6.4rem;
+    left: 5.8rem;
+    transform: translate(-50%, -50%);
+  }
+}

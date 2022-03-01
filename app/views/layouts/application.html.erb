@@ -13,7 +13,9 @@
   </head>
 
   <body>
-    <%= render 'shared/navbar' %>
+    <% unless action_name == 'welcome' %>
+      <%= render 'shared/navbar' %>
+    <% end %>
     <%= render 'shared/flashes' %>
 
     <%= yield %>
