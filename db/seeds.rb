@@ -9,5 +9,3 @@
 Category.create(name: "Danger Zones", target: 0)
 Category.create(name: "Medical Assistance", target: 0)
 Category.create(name: "Shelters", target: 0)
-
-Post.create()
