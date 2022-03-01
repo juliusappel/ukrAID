@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   get :home, to: 'pages#home'
   resources :categories, only: %i[show]
   resources :posts, only: %i[show new create]
+  get :dashboard, to: 'pages#dashboard'
 end
