@@ -20,6 +20,8 @@
     <%= render 'shared/flashes' %>
 
     <%= yield %>
-    <%= render 'shared/bottom-menu' %>
+    <% unless action_name == 'welcome' %>
+      <%= render 'shared/bottom-menu' %>
+    <% end %>
   </body>
 </html>

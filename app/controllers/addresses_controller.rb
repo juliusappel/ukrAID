@@ -12,7 +12,7 @@ class AddressesController < ApplicationController
     if @address.save
       redirect_to post_path(@post)
     else
-      render :new
+      render 'posts/show'
     end
   end
 
