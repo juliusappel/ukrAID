@@ -1,0 +1,17 @@
+<h1>Create new post</h1>
+<%= simple_form_for(@post) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+    <%= f.input :title, placeholder: "Title" %>
+    <%= f.input :content %>
+    <%= f.input :phone_number, placeholder: '00 380 9202 2 2 22' %>
+    <%= f.input :email, placeholder: 'someone@gmail.com' %>
+    <%= f.input :website %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, class: "btn btn-primary" %>
+  </div>
+  <% end %>
