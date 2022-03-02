@@ -4,8 +4,9 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.input :title, placeholder: "Title" %>
-    <%= f.rich_text_area :rich_body %>
+    <%= f.input :title, placeholder: "Title", label: 'Post Title' %>
+    <%= f.label 'Post Content'%>
+    <%= f.rich_text_area :rich_content, required: true, label: 'Post Content' %>
     <%= f.input :phone_number, placeholder: '00 380 9202 2 2 22' %>
     <%= f.input :email, placeholder: 'someone@gmail.com' %>
     <%= f.input :website, placeholder: 'www.ukraid.com' %>
