@@ -3,6 +3,7 @@ class Post < ApplicationRecord
   has_many :addresses, dependent: :destroy
   has_many_attached :photos, dependent: :destroy
   has_rich_text :rich_content
+  acts_as_favoritable
 
   # Validates necessary post elements
   validates :title, :vote_score, :pending, presence: true
