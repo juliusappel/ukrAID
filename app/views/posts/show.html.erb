@@ -15,9 +15,15 @@
   </div>
 
   <div class="contact-details">
-    <%= link_to 'Call', "tel:#{@post.phone_number}" %>
-    <%= mail_to 'Mail', @post.email %>
-    <%= link_to 'Website', @post.website %>
+    <% if @post.phone_number.present? %>
+      <%= link_to 'Call', "tel:#{@post.phone_number}", class: "btn btn-cta-primary" %>
+    <% end %>
+    <% if @post.email.present? %>
+      <%= mail_to 'Mail', @post.email, class: "btn btn-cta-secondary" %>
+    <% end %>
+    <% if @post.website.present? %>
+      <%= link_to 'Website', @post.website, class: "btn btn-cta-secondary" %>
+    <% end %>
   </div>
 
   <p> <%= @post.rich_content %></p>
