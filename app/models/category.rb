@@ -3,5 +3,6 @@ class Category < ApplicationRecord
   validates :name, length: { in: 4..30 }, presence: true
 
   # Validates target user
-  validates :target, numericality: { only_integer: true }, presence: true
+  # 0 = Both, 1 = Ukrainian, 2 = Rest of the world
+  validates :target_group, numericality: { only_integer: true }, presence: true
 end
