@@ -38,6 +38,6 @@ class Post < ApplicationRecord
   private
 
   def content_is_attached
-    errors.add(:rich_content, 'must be attached') unless rich_content.attached?
+    errors.add(:rich_content, 'must be attached') unless rich_content.present?
   end
 end
