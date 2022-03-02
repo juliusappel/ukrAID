@@ -9,3 +9,5 @@
 Category.create(name: "Danger Zones", target: 0)
 Category.create(name: "Medical Assistance", target: 0)
 Category.create(name: "Shelters", target: 0)
+User.create!(username: 'moritz', email: 'moritz@quast.co', password: '123456', role: 1)
+Post.create(title: "WTF", content: "skjhaksjdhkajshkjajshdkjhasd", user_id: 1)

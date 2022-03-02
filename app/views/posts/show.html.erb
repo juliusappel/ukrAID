@@ -1,0 +1,26 @@
+<div class="post">
+  <h1><%= @post.title %></h1>
+
+  <img src="https://i.picsum.photos/id/256/200/300.jpg?hmac=6-SQmUqIECHQ4QadM7mAYY3sHPH5r_8e2pCBs7V67Sc"
+      id="post-photo"
+      alt="randomized">
+
+  <div class="icons">
+    <div class="upvotes">
+      <%= @post.vote_score %>
+    </div>
+    <div class="location">
+      Category
+    </div>
+  </div>
+
+  <div class="contact-details">
+    <% link_to 'Phone', "tel:#{@post.phone_number}" %>
+    <% mail_to 'Mail', @post.email %>
+    <% link_to 'Website', @post.website %>
+  </div>
+
+  <p> <%= @post.content %></p>
+</div>
+
+<!-- upvote functionality >
