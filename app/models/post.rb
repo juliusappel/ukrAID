@@ -4,6 +4,8 @@ class Post < ApplicationRecord
   has_many_attached :photos, dependent: :destroy
   has_rich_text :rich_content
 
+  accepts_nested_attributes_for :addresses
+
   # Validates necessary post elements
   validates :title, :vote_score, :pending, presence: true
 
