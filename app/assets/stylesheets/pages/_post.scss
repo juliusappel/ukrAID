@@ -14,8 +14,22 @@
   margin-bottom: 1rem;
 }
 
-#icons {
+.icons {
   display: flex;
+  position: absolute;
+  top: 20.3rem;
+  right: 2.7rem;
+
+  .upvotes {
+    background-color: $ukr_yellow;
+    padding: 0.3rem 0.8rem;
+    border-radius: 10px;
+    margin-right: 0.5rem;
+  }
+
+  .category {
+    background-color: $light-gray;
+    padding: 0.3rem 0.8rem;
+    border-radius: 10px;
+  }
 }
-
-
