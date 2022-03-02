@@ -91,7 +91,6 @@ ActiveRecord::Schema.define(version: 2022_03_02_114213) do
     t.boolean "pending"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.boolean "saved", default: false
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
