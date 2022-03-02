@@ -2,9 +2,13 @@ class Post < ApplicationRecord
   belongs_to :user
   has_many :addresses, dependent: :destroy
   has_many_attached :photos, dependent: :destroy
+  has_rich_text :rich_content
 
   # Validates necessary post elements
-  validates :title, :content, :vote_score, :pending, presence: true
+  validates :title, :vote_score, :pending, presence: true
+
+  # Validates content of a post
+  validate :content_is_attached
 
   # Validates a minimum title length of 4 characters & maximum title length of 30 chharacters
   validates :title, length: { in: 4..30 }
@@ -30,4 +34,10 @@ class Post < ApplicationRecord
     |(?:(?:[a-z\u00a1-\uffff0-9]+-?)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]+-?)*
     [a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})
     ?(?:\/[^\s]*)?\z}i, allow_blank: true }
+
+  private
+
+  def content_is_attached
+    errors.add(:rich_content, 'must be attached') unless rich_content.attached?
+  end
 end
