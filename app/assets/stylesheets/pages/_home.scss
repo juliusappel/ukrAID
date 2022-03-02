@@ -1,4 +1,10 @@
 // Specific CSS for your home-page
+body {
+  min-height: 100vh;
+  /* mobile viewport bug fix */
+  min-height: -webkit-fill-available;
+}
+
 .home {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
