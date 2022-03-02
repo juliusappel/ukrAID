@@ -68,3 +68,6 @@ gem 'geocoder'
 
 # Add image upload to Cloudinary
 gem 'cloudinary'
+
+# Add 'save post' functionality
+gem 'acts_as_favoritor'
