@@ -18,6 +18,16 @@ class PostsController < ApplicationController
     end
   end
 
+  def destroy
+    @post.destroy
+
+    if @post.destroy
+      redirect_to dashboard_path, notice: "Your post was successfully deleted."
+    else
+      render :show
+    end
+  end
+
   private
 
   def post_params
