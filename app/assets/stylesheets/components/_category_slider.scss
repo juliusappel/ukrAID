@@ -1,0 +1,35 @@
+.category-slider {
+  margin-top: 0.5rem;
+}
+
+.category-menu {
+  margin:0;
+  padding: 0.5rem;
+  list-style: none;
+  float: none;
+  white-space: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+
+  a {
+    text-decoration: none;
+    background-color: $navy;
+    padding: 0.5rem 1rem;
+    color: white;
+    border-radius: 20px;
+  }
+}
+
+.category-menu::-webkit-scrollbar {
+  display: none;
+}
+
+.category-menu li {
+  margin-right: 0.5em;
+  display:inline;
+}
+
+.category-menu ul {
+  padding: 1rem;
+}
