@@ -5,6 +5,7 @@
 
   <div class="form-inputs">
     <%= f.input :title, placeholder: "Title", label: 'Post Title' %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
     <%= f.label 'Post Content'%>
     <%= f.rich_text_area :rich_content, required: true, label: 'Post Content' %>
     <%= f.input :phone_number, placeholder: '00 380 9202 2 2 22' %>
