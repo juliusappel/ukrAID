@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :posts
+  acts_as_favoritor
 
   validates :username, :role, presence: true
   validates :username, uniqueness: true
