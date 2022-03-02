@@ -1,0 +1,24 @@
+.category-slider {
+  height: 60px;
+}
+
+.category-menu {
+  margin:0;
+  padding: 0;
+  list-style: none;
+  float: none;
+  white-space: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+.category-menu::-webkit-scrollbar {
+  display: none;
+}
+
+.category-menu li {
+  margin-right: 1em;
+  display:inline;
+
+}
