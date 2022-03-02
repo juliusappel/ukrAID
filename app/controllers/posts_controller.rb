@@ -1,6 +1,13 @@
 class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
+    @markers = @post.addresses.geocoded.map do |a|
+      {
+        lat: a.latitude,
+        lng: a.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { address: a })
+      }
+    end
   end
 
   def new
