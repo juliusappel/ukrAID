@@ -5,11 +5,12 @@
 
   <div class="form-inputs">
     <%= f.input :title, placeholder: "Title", label: 'Post Title' %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true }, label: 'Add images to your post' %>
     <%= f.label 'Post Content'%>
     <%= f.rich_text_area :rich_content, required: true, label: 'Post Content' %>
-    <%= f.input :phone_number, placeholder: '00 380 9202 2 2 22' %>
-    <%= f.input :email, placeholder: 'someone@gmail.com' %>
-    <%= f.input :website, placeholder: 'www.ukraid.com' %>
+    <%= f.input :phone_number, as: :tel, placeholder: '00 380 9202 2 2 22', label: 'Add a contact phone number' %>
+    <%= f.input :email, as: :email, placeholder: 'someone@gmail.com', label: 'Add a contact email address' %>
+    <%= f.input :website, as: :url, placeholder: 'www.ukraid.com', label: 'Add a corresponding website' %>
   </div>
 
   <div class="form-actions">
