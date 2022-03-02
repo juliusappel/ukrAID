@@ -1,3 +1,15 @@
 <div class="cards">
-  <%=  %>
+  <ul class="card-list">
+    <% @posts.each do |post| %>
+      <li><div class="card">
+        <h4><%= post.title %></h4>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam sint molestias at! Autem dignissimos explicabo architecto! Dolores veniam deserunt nihil qui nisi dignissimos sapiente, amet numquam, omnis perspiciatis exercitationem iusto. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, excepturi consectetur soluta at assumenda sequi necessitatibus hic ipsum quas culpa aliquam tenetur unde consequatur facilis, omnis, aliquid nesciunt animi perferendis.</p>
+        <img src="https://picsum.photos/200/300" alt="placeholder">
+        <div class="iconset">
+          <div id="ctgry"><%= @categories.first.name %></div>
+          <div id="vote_score"><%= post.vote_score %></div>
+        </div>
+      </div></li>
+    <% end %>
+  </ul>
 </div>
