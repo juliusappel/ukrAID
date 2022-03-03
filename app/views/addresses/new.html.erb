@@ -1,0 +1,19 @@
+<div class="forms">
+  <h1>Do you want to add an address?</h1><h2>(Optional)</h2>
+  <br>
+  <%= simple_form_for([@post, @address]) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+    <div class="form-inputs">
+      <%= f.input :name, placeholder: "Title", label: 'Address Title' %>
+      <%= f.input :location, label: 'Add an address or point of interest' %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, 'Add address', class: "btn btn-primary" %>
+      <%= link_to 'No address needed', post_path(@post), class: 'btn btn-secondary' %>
+    </div>
+  <% end %>
+
+</div>

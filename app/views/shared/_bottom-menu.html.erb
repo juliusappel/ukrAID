@@ -1,5 +1,6 @@
 <div class="bottom-menu">
-  <a href="#home" class="active">Home</a>
-  <a href="#news">News</a>
-  <a href="#contact">Contact</a>
+  <%= link_to 'Home', home_path, class: 'active' %>
+  <%= link_to '[ + ]', new_post_path %>
+  <%= link_to 'Dashboard', dashboard_path %>
+  <%= link_to 'Login', new_user_session_path %>
 </div>
