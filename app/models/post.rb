@@ -3,8 +3,13 @@ class Post < ApplicationRecord
   has_many :addresses, dependent: :destroy
   has_many_attached :photos, dependent: :destroy
   has_rich_text :rich_content
-  acts_as_favoritable
 
+  before_save { rich_content.plain_text_body = rich_content.body.to_plain_text }
+  scope :search_text, ->(query) { joins(:rich_text_rich_content).merge(ActionText::RichText.where <<~SQL, "%" + query + "%") }
+    plain_text_body ILIKE ?
+  SQL
+
+  acts_as_favoritable
   accepts_nested_attributes_for :addresses
 
   # Validates necessary post elements
