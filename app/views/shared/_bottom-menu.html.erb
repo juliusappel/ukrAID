@@ -1,9 +1,8 @@
 <div class="bottom-menu">
-  <%= link_to 'Home', home_path, class: 'active' %>
+  <%= link_to 'Feed', home_path, class: 'active' %>
   <%= link_to new_post_path do %>
-    <i class="fa-solid fa-square-plus"></i>
+    [ + ]
   <% end %>
   <%= link_to 'Dashboard', dashboard_path %>
   <%= link_to 'Login', new_user_session_path %>
 </div>
-
