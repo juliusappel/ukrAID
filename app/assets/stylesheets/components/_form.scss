@@ -3,3 +3,10 @@
   margin-left: 1rem;
   margin-right: 1rem;
 }
+
+.mapboxgl-ctrl-geocoder {
+  max-width: none;
+  width: 100%;
+  border: 1px solid lightgrey;
+  box-shadow: none;
+}
