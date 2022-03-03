@@ -43,7 +43,13 @@ class PostsController < ApplicationController
 
   def toggle_save
     @post = Post.find(params[:id])
-    current_user.favorited?(@post) ? current_user.unfavorite(@post) : current_user.favorite(@post)
+    @user = current_user
+    @user.favorited?(@post) ? @user.unfavorite(@post) : @user.favorite(@post)
+    if @user.favorited?(@post)
+      redirect_to dashboard_path, notice: "Post was saved."
+    else
+      redirect_to dashboard_path, notice: "Post was unsaved."
+    end
   end
 
   private

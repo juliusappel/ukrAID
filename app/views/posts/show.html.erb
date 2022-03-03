@@ -38,7 +38,17 @@
 
   <br>
   <!-- Save / Unsave this post to dashboard -->
-  <%= link_to "save", toggle_save_post_path(post), remote: true, method: :post %>
+  <% if user_signed_in? %>
+    <% if current_user.favorited?(@post) %>
+      <%= link_to "unsave", toggle_save_post_path(post), class: "btn btn-primary", method: :post do %>
+        <i class="fa-solid fa-bookmark"></i>
+      <% end %>
+    <% else %>
+      <%= link_to "save", toggle_save_post_path(post), class: "btn btn-primary", method: :post do %>
+        <i class="fa-regular fa-bookmark"></i>
+      <% end %>
+    <% end %>
+  <% end %>
 </div>
 
-<!-- upvote functionality >
+<!-- upvote functionality -->
