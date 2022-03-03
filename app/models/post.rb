@@ -5,6 +5,8 @@ class Post < ApplicationRecord
   has_rich_text :rich_content
   acts_as_favoritable
 
+  accepts_nested_attributes_for :addresses
+
   # Validates necessary post elements
   validates :title, :vote_score, :pending, presence: true
 

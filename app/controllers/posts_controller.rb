@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+
   def show
     @post = Post.find(params[:id])
     @markers = @post.addresses.geocoded.map do |a|
@@ -12,6 +13,7 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @address = Address.new
   end
 
   def create
