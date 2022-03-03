@@ -1,8 +1,7 @@
 class PagesController < ApplicationController
   # skip_before_action :authenticate_user!, only: [ :home ]
 
-  def welcome
-  end
+  def welcome; end
 
   def home
     @categories = Category.all
