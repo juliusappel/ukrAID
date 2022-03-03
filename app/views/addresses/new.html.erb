@@ -7,7 +7,10 @@
 
     <div class="form-inputs">
       <%= f.input :name, placeholder: "Title", label: 'Address Title' %>
-      <%= f.input :location, label: 'Add an address or point of interest' %>
+      <%= f.input :location,
+                  label: 'Add an address or point of interest',
+                  input_html: { data: { geocoder_target: "address" } },
+                  wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } } %>
     </div>
 
     <div class="form-actions">
