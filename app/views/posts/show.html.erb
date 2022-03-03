@@ -38,7 +38,7 @@
 
   <br>
   <!-- Save / Unsave this post to dashboard -->
-
+  <%= link_to "save", toggle_save_post_path(post), remote: true, method: :post %>
 </div>
 
 <!-- upvote functionality >

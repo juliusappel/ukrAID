@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!
+  skip_before_action :authenticate_user!, only: :show
 
   def show
     @post = Post.find(params[:id])
@@ -37,6 +39,11 @@ class PostsController < ApplicationController
     else
       render :show
     end
+  end
+
+  def toggle_save
+    @post = Post.find(params[:id])
+    current_user.favorited?(@post) ? current_user.unfavorite(@post) : current_user.favorite(@post)
   end
 
   private
