@@ -5,6 +5,13 @@ body {
   min-height: -webkit-fill-available;
 }
 
+@media ( min-width: 720px ) {  /** Größerer Viewport: Tablett **/
+	.content {
+    margin: 0 auto;
+		width: 40%;
+	}
+}
+
 .home {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
