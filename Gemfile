@@ -71,3 +71,6 @@ gem 'cloudinary'
 
 # Add 'save post' functionality
 gem 'acts_as_favoritor'
+
+# Add hCaptcha for signup / login / create post
+gem 'hcaptcha'
