@@ -1,8 +1,21 @@
 .post {
+  background-color: white;
   margin: 0 auto;
-  margin-left: 2rem;
-  margin-right: 2rem;
-  margin-top: 2rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-top: 1rem;
+  padding: 1rem;
+  color: $navy;
+  border-radius: 10px;
+  margin-bottom: 4rem;
+
+  img {
+    border-radius: 10px;
+  }
+
+  h1 {
+    font-weight: bolder;
+  }
 }
 
 #post-photo {
@@ -16,17 +29,23 @@
 
 .icons {
   display: flex;
+  margin-bottom: 1rem;
 
   .upvotes {
     background-color: $ukr_yellow;
-    padding: 0.3rem 0.8rem;
-    border-radius: 10px;
-    margin-right: 0.5rem;
+    padding: 0.1rem 0.6rem;
+    border-radius: 15px;
+    font-weight: bolder;
+    font-size: 12px;
+    margin-right: 0.4rem;
   }
 
   .category {
-    background-color: $light-gray;
-    padding: 0.3rem 0.8rem;
-    border-radius: 10px;
+    background-color: #eff3f8;
+    margin-right: 0.3rem;
+    padding: 0.1rem 0.4rem;
+    border-radius: 15px;
+    font-size: 12px;
+    border: 1px solid rgb(221, 221, 221);
   }
 }
