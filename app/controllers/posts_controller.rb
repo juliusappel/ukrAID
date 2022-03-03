@@ -8,7 +8,8 @@ class PostsController < ApplicationController
       {
         lat: a.latitude,
         lng: a.longitude,
-        info_window: render_to_string(partial: "info_window", locals: { address: a })
+        info_window: render_to_string(partial: "info_window", locals: { address: a }),
+        # image_url: helpers.asset_url("/images/logo_favicon.png")
       }
     end
   end
