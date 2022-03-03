@@ -27,11 +27,19 @@
     margin-bottom: 0.2rem;
   }
 
-  p {
+  .with-image {
     width: 60%;
     margin: 0;
     margin-top: 0.2rem;
-    font-size: 10px;
+    font-size: 11px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  .no-image {
+    margin: 0;
+    margin-top: 0.2rem;
+    font-size: 11px;
     text-overflow: ellipsis;
     overflow: hidden;
   }
@@ -41,29 +49,33 @@
     position: absolute;
     top: 0.5rem;
     right: 0.5rem;
+    height: auto;
 
     #vote_score {
       background-color: $ukr_yellow;
-      padding: 0.3rem 0.8rem;
-      border-radius: 10px;
+      padding: 0.1rem 0.6rem;
+      border-radius: 15px;
       font-weight: bolder;
+      font-size: 12px;
     }
 
     #ctgry {
-      background-color: $light-gray;
-      margin-right: 0.5rem;
-      padding: 0.3rem 0.8rem;
-      border-radius: 10px;
-      font-size: 14px;
+      background-color: #eff3f8;
+      margin-right: 0.3rem;
+      padding: 0.1rem 0.4rem;
+      border-radius: 15px;
+      font-size: 12px;
+      border: 1px solid rgb(221, 221, 221);
     }
   }
 
   img {
     position: absolute;
     border-radius: 10px;
-    height: 73px;
+    height: 83px;
     bottom: 0.5rem;
     right: 0.5rem;
     width: 35%;
+    object-fit: cover;
   }
 }
