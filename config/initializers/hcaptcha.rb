@@ -4,5 +4,5 @@ Hcaptcha.configure do |config|
   # optional, default value = https://hcaptcha.com/siteverify
   config.verify_url = 'VERIFY_URL'
   # optional, default value = https://hcaptcha.com/1/api.js
-  config.api_script_url = 'API_SCRIPT_URL'
+  # config.api_script_url = 'API_SCRIPT_URL'
 end
