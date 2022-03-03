@@ -2,6 +2,7 @@ class Post < ApplicationRecord
   belongs_to :user
   has_many :addresses, dependent: :destroy
   has_many_attached :photos, dependent: :destroy
+  has_many :categories, through: :post_categories
   has_rich_text :rich_content
 
   before_save { rich_content.plain_text_body = rich_content.body.to_plain_text }

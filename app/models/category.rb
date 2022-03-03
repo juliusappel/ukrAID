@@ -1,4 +1,6 @@
 class Category < ApplicationRecord
+  has_many :posts, through: :post_categories
+
   # Validates a minimum name length of 4 characters & maximum name length of 30 chharacters
   validates :name, length: { in: 4..30 }, presence: true
 
