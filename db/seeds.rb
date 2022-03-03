@@ -41,7 +41,6 @@ Category.create(name: "Закарпатська область", target_group: 1
 Category.create(name: "Запорізька область", target_group: 1) # Zaporizhzhia Oblast
 Category.create(name: "Жито́мирська о́бласть", target_group: 1) # Zhytomyr Oblast
 
-
 # Aid categories
 
 # "How to help" categories
