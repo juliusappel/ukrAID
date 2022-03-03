@@ -71,6 +71,3 @@ gem 'cloudinary'
 
 # Add 'save post' functionality
 gem 'acts_as_favoritor'
-
-# Fix bundle install for Heroku
-gem 'pg_search'
