@@ -26,11 +26,19 @@
     <% end %>
   </div>
 
+  <!-- Show post content -->
   <p> <%= @post.rich_content %></p>
+
   <br>
+
+  <!-- Map showing addresses of post -->
   <% if @post.addresses.present? %>
     <%= render 'shared/map' %>
   <% end %>
+
+  <br>
+  <!-- Save / Unsave this post to dashboard -->
+
 </div>
 
 <!-- upvote functionality >
