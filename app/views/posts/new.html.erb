@@ -18,21 +18,6 @@
       <% end %> !-->
     </div>
 
-  <%= simple_form_for(@address) do |f| %>
-    <%= f.error_notification %>
-    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
-
-    <div class="form-inputs">
-      <%= f.input :name, placeholder: 'Title' label: 'Add an address/point of interest' %>
-      <%= f.input :location, placeholder: 'Enter a address/location' %>
-      <!-- <%= f.fields_for :addresses do |a| %>
-        <%= a.input :title %>
-        <%= a.input :location %>
-      <% end %> !-->
-    </div>
-
-
-
     <div class="form-actions">
       <%= f.button :submit, class: "btn btn-primary" %>
     </div>

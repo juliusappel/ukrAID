@@ -8,7 +8,7 @@ class Post < ApplicationRecord
   accepts_nested_attributes_for :addresses
 
   # Validates necessary post elements
-  validates :title, :vote_score, :pending, presence: true
+  validates :title, :vote_score, presence: true
 
   # Validates content of a post
   validate :content_is_attached

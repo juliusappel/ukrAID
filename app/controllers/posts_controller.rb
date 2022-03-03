@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, only: %i[new]
 
   def show
     @post = Post.find(params[:id])
@@ -23,7 +24,7 @@ class PostsController < ApplicationController
     @post.pending = true
 
     if @post.save!
-      redirect_to @post, notice: "Your post was successfully submitted. Please wait for it to be reviewed by an Admin"
+      redirect_to new_post_address_path(@post), notice: "Your post was successfully submitted. Please wait for it to be reviewed by an Admin"
     else
       render :new
     end
