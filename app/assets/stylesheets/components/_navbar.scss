@@ -39,6 +39,8 @@
 
 .bottom-menu {
   background-color: $ukr_blue;
+  display: flex;
+  justify-content: space-between;
   overflow: hidden;
   position: fixed;
   bottom: 0;
@@ -58,7 +60,7 @@
 
 /* Change the color of links on hover */
 .bottom-menu a:hover {
-  background-color: #ddd;
+  background-color: $ukr_blue;
   color: black;
 }
 

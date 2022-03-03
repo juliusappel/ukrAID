@@ -1,18 +1,20 @@
 <div class="post">
   <h1><%= @post.title %></h1>
 
-  <% if @post.photos.attached? %>
-    <%= render 'shared/carousel' %>
-  <% end %>
-
   <div class="icons">
     <div class="upvotes">
       <%= @post.vote_score %>
     </div>
     <div class="category">
-      Category
+      <%= @categories.name %>
     </div>
   </div>
+
+  <% if @post.photos.attached? %>
+    <%= render 'shared/carousel' %>
+  <% end %>
+  <br>
+
 
   <div class="contact-details">
     <% if @post.phone_number.present? %>
@@ -26,7 +28,10 @@
     <% end %>
   </div>
 
-  <p> <%= @post.rich_content %></p>
+  <div class="description">
+    <span> <%= @post.rich_content %></span>
+  </div>
+
   <br>
   <% if @post.addresses.present? %>
     <%= render 'shared/map' %>
