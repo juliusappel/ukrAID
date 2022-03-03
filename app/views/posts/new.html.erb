@@ -12,7 +12,7 @@
       <%= f.input :phone_number, as: :tel, placeholder: '00 380 9202 2 2 22', label: 'Add a contact phone number (Optional)' %>
       <%= f.input :email, as: :email, placeholder: 'someone@gmail.com', label: 'Add a contact email address (Optional)' %>
       <%= f.input :website, as: :url, placeholder: 'www.ukraid.com', label: 'Add a corresponding website (Optional)' %>
-
+      <%= hcaptcha_tag %>
       <div id="list1"
            class="dropdown-check-list"
            tabindex="100"
