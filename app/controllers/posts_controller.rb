@@ -5,7 +5,6 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @categories = PostCategory.where(post_id: @post.id)
     @post_categories = Category.where(id: @categories[0].category_id)
-    # @user = Post.user
     @markers = @post.addresses.geocoded.map do |a|
       {
         lat: a.latitude,
