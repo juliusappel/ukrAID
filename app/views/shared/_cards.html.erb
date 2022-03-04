@@ -4,6 +4,7 @@
       <%= link_to post_path(post) do %>
       <li><div class="card">
         <h4><%= post.title %></h4>
+        <p><%= post.created_at %></p>
         <% if post.photos.attached? %>
           <span class="with-image"><%= post.rich_content %></span>
           <%= cl_image_tag post.photos.first.key, alt: post.title %>
