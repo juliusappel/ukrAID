@@ -25,8 +25,8 @@
     <%= f.association :category %>
 
     <div class="form-actions">
-      <%= f.button :submit, 'Add another category', class: "btn btn-secondary" %>
-      <%= f.button :submit, post_path(@post), class: 'btn btn-primary' %>
+      <%= f.button :submit, 'Add category', class: "btn btn-secondary" %>
+      <%= link_to 'Go to post', post_path(@post), class: 'btn btn-primary' %>
     </div>
   <% end %>
 </div>
