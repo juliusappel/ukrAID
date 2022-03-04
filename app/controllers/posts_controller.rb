@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, only: %i[new]
+  before_action :authenticate_user!
+  skip_before_action :authenticate_user!, only: :show
 
   def show
     @post = Post.find(params[:id])
@@ -26,7 +27,6 @@ class PostsController < ApplicationController
     @post.user_id = current_user.id
     @post.vote_score = 1
     @post.pending = true
-
     if @post.save!
       redirect_to new_post_address_path(@post), notice: "Your post was successfully submitted. Please wait for it to be reviewed by an Admin"
     else
