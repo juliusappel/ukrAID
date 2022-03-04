@@ -1,5 +1,5 @@
 <div class="forms">
-  <h1>Add categories</h1>
+  <h1>Add category</h1>
   <%= simple_form_for([@post, @post_category]) do |f| %>
       <%= f.error_notification %>
       <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
@@ -24,6 +24,9 @@
     </div> !-->
     <%= f.association :category %>
 
-    <%= f.submit :submit, class: 'btn btn-primary' %>
+    <div class="form-actions">
+      <%= f.button :submit, 'Add another category', class: "btn btn-secondary" %>
+      <%= f.button :submit, post_path(@post), class: 'btn btn-primary' %>
+    </div>
   <% end %>
 </div>

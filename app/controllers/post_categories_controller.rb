@@ -11,9 +11,8 @@ class PostCategoriesController < ApplicationController
     @post_category.post_id = @post.id
 
     # Save multiple categories to a post
-  
     if @post_category.save
-      redirect_to post_path(@post)
+      redirect_to new_post_post_category_path(@post)
     else
       render :new
     end
