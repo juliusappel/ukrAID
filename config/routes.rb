@@ -12,5 +12,6 @@ Rails.application.routes.draw do
 
   resources :posts, only: %i[new create] do
     resources :addresses, only: %i[new create]
+    resources :post_categories, only: %i[new create]
   end
 end

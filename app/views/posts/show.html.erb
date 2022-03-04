@@ -6,9 +6,11 @@
     <div class="upvotes">
       <%= @post.vote_score %>
     </div>
-    <div class="category">
-      <%= @category.name %>
-    </div>
+    <% @post_categories.each do |cat| %>
+      <div class="category">
+        <%= cat.name %>
+      </div>
+    <% end %>
   </div>
 
   <% if @post.photos.attached? %>
