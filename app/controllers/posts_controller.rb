@@ -22,20 +22,13 @@ class PostsController < ApplicationController
   end
 
   def create
-    captcha_validated, captcha_response = verify_hcaptcha
-    if captcha_validated
-      @post = Post.new(post_params)
-      @post.user_id = current_user.id
-      @post.vote_score = 1
-      @post.pending = true
-
-      if @post.save!
-        redirect_to new_post_address_path(@post), notice: "Your post was successfully submitted. Please wait for it to be reviewed by an Admin"
-      else
-        render :new
-      end
+    @post = Post.new(post_params)
+    @post.user_id = current_user.id
+    @post.vote_score = 1
+    @post.pending = true
+    if @post.save!
+      redirect_to new_post_address_path(@post), notice: "Your post was successfully submitted. Please wait for it to be reviewed by an Admin"
     else
-      flash[:error] = captcha_response[:error_codes]
       render :new
     end
   end
