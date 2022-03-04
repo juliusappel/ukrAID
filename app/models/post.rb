@@ -6,7 +6,7 @@ class Post < ApplicationRecord
   has_rich_text :rich_content
 
   before_save { rich_content.plain_text_body = rich_content.body.to_plain_text }
-  scope :search_text, ->(query) { joins(:rich_text_rich_content).merge(ActionText::RichText.where <<~SQL, "%" + query + "%") }
+  scope :search_text, ->(query) { joins(:rich_text_rich_content).where(title: query).merge(ActionText::RichText.where <<~SQL, "%" + query + "%") }
     plain_text_body ILIKE ?
   SQL
 
