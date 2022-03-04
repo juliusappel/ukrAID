@@ -12,24 +12,11 @@
       <%= f.input :phone_number, as: :tel, placeholder: '00 380 9202 2 2 22', label: 'Add a contact phone number (Optional)' %>
       <%= f.input :email, as: :email, placeholder: 'someone@gmail.com', label: 'Add a contact email address (Optional)' %>
       <%= f.input :website, as: :url, placeholder: 'www.ukraid.com', label: 'Add a corresponding website (Optional)' %>
-      <div id="list1"
-           class="dropdown-check-list"
-           tabindex="100"
-           data-controller="dropdown"
-           data-action="click->dropdown#dropdown">
-
-        <span class="anchor">Select categories</span>
-        <ul class="items">
-          <% @categories.each do |cat| %>
-            <li><input type="checkbox" /> <%= cat.name %> </li>
-          <% end %>
-        </ul>
-      </div>
     </div>
     <br>
     <div class="form-actions">
-      <%= f.button :submit,
-                  class: "btn btn-primary" %>
+      <%= f.button :submit, 'Add an address', class: "btn btn-primary" %>
+      <%= link_to 'Continue', new_post_post_category_path(@post), class: 'btn btn-secondary' %>
     </div>
   <% end %>
 </div>

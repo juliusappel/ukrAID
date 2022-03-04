@@ -16,7 +16,7 @@ class AddressesController < ApplicationController
     @address.post = @post
 
     if @address.save
-      redirect_to post_path(@post)
+      redirect_to new_post_address_path(@post)
     else
       render 'posts/show'
     end

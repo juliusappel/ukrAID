@@ -4,8 +4,8 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    # @categories = PostCategory.where(post_id: @post.id)
-    @category = Category.find(params[:id])
+    @categories = PostCategory.where(post_id: @post.id)
+    @post_categories = Category.where(id: @categories[0].category_id)
     @markers = @post.addresses.geocoded.map do |a|
       {
         lat: a.latitude,

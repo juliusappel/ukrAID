@@ -1,13 +1,16 @@
 <div class="post">
   <h1><%= @post.title %></h1>
+  <p>Posted by <em><%= @post.user.username %></em> on <%= @post.created_at %></p>
 
   <div class="icons">
     <div class="upvotes">
       <%= @post.vote_score %>
     </div>
-    <div class="category">
-      <%= @category.name %>
-    </div>
+    <% @post.categories.each do |cat| %>
+      <div class="category">
+        <%= cat.name %>
+      </div>
+    <% end %>
   </div>
 
   <% if @post.photos.attached? %>
