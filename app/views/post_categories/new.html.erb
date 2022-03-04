@@ -1,0 +1,24 @@
+
+<%= simple_form_for(@post_category) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+  <div id="list1"
+      class="dropdown-check-list form-inputs"
+      tabindex="100"
+      data-controller="dropdown"
+      data-action="click->dropdown#dropdown">
+
+    <span class="anchor">Select categories</span>
+    <ul class="items">
+      <% @categories.each do |cat| %>
+        <li>
+          <input type="checkbox" /> <%= cat.name %>
+          <%= f.input as: :boolean, boolean_style: :inline %>
+        </li>
+      <% end %>
+    </ul>
+    <div class="form-actions">
+      <%= f.button :submit, class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>
