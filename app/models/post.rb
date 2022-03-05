@@ -15,10 +15,7 @@ class Post < ApplicationRecord
   accepts_nested_attributes_for :addresses
 
   # Validates necessary post elements
-  validates :title, :vote_score, presence: true
-
-  # Validates content of a post
-  validate :content_is_attached
+  validates :title, :vote_score, :rich_content, presence: true
 
   # Validates a minimum title length of 4 characters & maximum title length of 30 chharacters
   validates :title, length: { in: 4..30 }
@@ -32,7 +29,7 @@ class Post < ApplicationRecord
     4[987654310]|3[9643210]|2[70]|7|1)\d{1,14}\z}, allow_blank: true }
 
   # Validates email
-  validates :email, format: { with: /A[^@s] @[^@s] z/, allow_blank: true }
+  # validates :email, format: { with: /A[^@s] @[^@s] z/, allow_blank: true }
 
   # Validates website (Regex source: https://urlregex.com/)
   validates :website, format: { with: %r{\A(?:(?:https?|ftp)://)
@@ -44,10 +41,4 @@ class Post < ApplicationRecord
     |(?:(?:[a-z\u00a1-\uffff0-9]+-?)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]+-?)*
     [a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})
     ?(?:\/[^\s]*)?\z}i, allow_blank: true }
-
-  private
-
-  def content_is_attached
-    errors.add(:rich_content, 'must be attached') unless rich_content.present?
-  end
 end
