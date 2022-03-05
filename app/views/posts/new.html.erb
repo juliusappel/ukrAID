@@ -7,6 +7,8 @@
     <div class="form-inputs">
       <%= f.input :title,
                   placeholder: "Title",
+                  minlength: 4,
+                  maxlength: 60,
                   label: 'Post Title (Required)' %>
       <%= f.input :photos,
                   as: :file,

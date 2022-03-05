@@ -17,8 +17,8 @@ class Post < ApplicationRecord
   # Validates necessary post elements
   validates :title, :vote_score, :rich_content, presence: true
 
-  # Validates a minimum title length of 4 characters & maximum title length of 30 chharacters
-  validates :title, length: { in: 4..30 }
+  # Validates a minimum title length of 4 characters & maximum title length of 60 chharacters
+  validates :title, length: { in: 4..60 }
 
   # Validation to only allow integers as vote score
   validates :vote_score, numericality: { only_integer: true }
