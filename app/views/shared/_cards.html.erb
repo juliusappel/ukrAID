@@ -12,7 +12,9 @@
           <span class="no-image"><%= post.rich_content %></span>
         <% end %>
         <div class="iconset">
-          <div id="ctgry"><%= post.categories[0].name %></div>
+          <% if post.categories.present? %>
+            <div id="ctgry"><%= post.categories[0].name %></div>
+          <% end %>
           <div id="vote_score"><%= post.vote_score %></div>
         </div>
       </div></li>
