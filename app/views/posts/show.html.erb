@@ -6,10 +6,12 @@
     <div class="upvotes">
       <%= @post.vote_score %>
     </div>
-    <% @post.categories.each do |cat| %>
-      <div class="category">
-        <%= cat.name %>
-      </div>
+    <% if @post.categories.present? %>
+      <% @post.categories.each do |cat| %>
+        <div class="category">
+          <%= cat.name %>
+        </div>
+      <% end %>
     <% end %>
   </div>
 
