@@ -5,13 +5,32 @@
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
     <div class="form-inputs">
-      <%= f.input :title, placeholder: "Title", label: 'Post Title (Required)' %>
-      <%= f.input :photos, as: :file, input_html: { multiple: true }, label: 'Add images to your post (Optional)' %>
+      <%= f.input :title,
+                  placeholder: "Title",
+                  label: 'Post Title (Required)' %>
+      <%= f.input :photos,
+                  as: :file,
+                  input_html: { multiple: true },
+                  label: 'Add images to your post (Optional)' %>
       <%= f.label 'Post Content (Required)'%>
-      <%= f.rich_text_area :rich_content, required: true, label: 'Post Content' %>
-      <%= f.input :phone_number, as: :tel, placeholder: '00 380 9202 2 2 22', label: 'Add a contact phone number (Optional)' %>
-      <%= f.input :email, as: :email, placeholder: 'someone@gmail.com', label: 'Add a contact email address (Optional)' %>
-      <%= f.input :website, as: :url, placeholder: 'www.ukraid.com', label: 'Add a corresponding website (Optional)' %>
+      <%= f.rich_text_area :rich_content,
+                          required: true,
+                          label: 'Post Content' %>
+      <%= f.input :phone_number,
+                  as: :tel,
+                  input_html: { type: 'tel' },
+                  placeholder: '00 380 9202 2 2 22',
+                  label: 'Add a contact phone number (Optional)' %>
+      <%= f.input :email,
+                  as: :email,
+                  input_html: { type: 'email' },
+                  placeholder: 'someone@gmail.com',
+                  label: 'Add a contact email address (Optional)' %>
+      <%= f.input :website,
+                  as: :url,
+                  input_html: { type: 'url' },
+                  placeholder: 'www.ukraid.com',
+                  label: 'Add a corresponding website (Optional)' %>
     </div>
     <br>
     <div class="form-actions">
