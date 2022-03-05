@@ -32,7 +32,7 @@ class Post < ApplicationRecord
     4[987654310]|3[9643210]|2[70]|7|1)\d{1,14}\z}, allow_blank: true }
 
   # Validates email
-  validates :email, format: { with: /A[^@s] @[^@s] z/, allow_blank: true }
+  # validates :email, format: { with: /A[^@s] @[^@s] z/, allow_blank: true }
 
   # Validates website (Regex source: https://urlregex.com/)
   validates :website, format: { with: %r{\A(?:(?:https?|ftp)://)
