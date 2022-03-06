@@ -74,3 +74,6 @@ gem 'acts_as_favoritor'
 
 # Add hCaptcha for signup / login / create post
 gem 'hcaptcha'
+
+# Add vote functionality
+gem 'acts_as_votable'
