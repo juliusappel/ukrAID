@@ -5,7 +5,14 @@ class PagesController < ApplicationController
   end
 
   def home
-    @categories = Category.all
+    case params[:location]
+    when "ukraine"
+      @categories = Category.where(target_group: 0) + Category.where(target_group: 1)
+    when "world"
+      @categories = Category.where(target_group: 0) + Category.where(target_group: 2)
+    else
+      @categories = Category.all
+    end
     @posts = Post.all
   end
 
