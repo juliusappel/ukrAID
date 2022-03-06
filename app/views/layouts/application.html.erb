@@ -14,17 +14,21 @@
   </head>
 
   <body>
-    <% unless action_name == 'welcome' %>
-      <%= render 'shared/navbar' %>
-    <% end %>
+    <div class="wrapper">
+      <!-- NAVBAR !-->
+      <% unless action_name == 'welcome' %>
+        <%= render 'shared/navbar' %>
+      <% end %>
+      <!-- CONTENT !-->
+      <div class="content">
+        <%= render 'shared/flashes' %>
+        <%= yield %>
+      </div>
+      <!-- BOTTOM-MENU !-->
+      <% unless action_name == 'welcome' %>
+        <%= render 'shared/bottom-menu' %>
+      <% end %>
 
-    <div class="content">
-      <%= render 'shared/flashes' %>
-      <%= yield %>
     </div>
-
-    <% unless action_name == 'welcome' %>
-      <%= render 'shared/bottom-menu' %>
-    <% end %>
   </body>
 </html>

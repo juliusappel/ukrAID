@@ -3,18 +3,21 @@ body {
   min-height: 100vh;
   /* mobile viewport bug fix */
   min-height: -webkit-fill-available;
+  background-color: $lightblue;
 }
 
-@media ( min-width: 720px ) {  /** Größerer Viewport: Tablett **/
-	.content {
-    margin: 0 auto;
-		width: 40%;
-	}
+.wrapper {
+  position: relative;
+}
+
+.content {
+  padding-top: 6rem;
 }
 
 .home {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
+  margin-bottom: 4rem;
 
   a {
     text-decoration: none;

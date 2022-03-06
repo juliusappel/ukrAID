@@ -1,33 +1,43 @@
 <div class="post">
   <h1><%= @post.title %></h1>
-
-  <% if @post.photos.attached? %>
-    <%= render 'shared/carousel' %>
-  <% end %>
+  <p>Posted by <em><%= @post.user.username %></em> on <%= @post.created_at %></p>
 
   <div class="icons">
     <div class="upvotes">
       <%= @post.vote_score %>
     </div>
-    <div class="category">
-      Category
-    </div>
+    <% if @post.categories.present? %>
+      <% @post.categories.each do |cat| %>
+        <%= link_to category_path(cat) do %>
+          <div class="category">
+            <%= cat.name %>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
   </div>
+
+  <% if @post.photos.attached? %>
+    <%= render 'shared/carousel' %>
+  <% end %>
+  <br>
+
 
   <div class="contact-details">
     <% if @post.phone_number.present? %>
-      <%= link_to 'Call', "tel:#{@post.phone_number}", class: "btn btn-cta-primary" %>
+      <%= phone_to @post.phone_number, 'Call', class: "btn btn-cta-primary" %>
     <% end %>
     <% if @post.email.present? %>
-      <%= mail_to 'Mail', @post.email, class: "btn btn-cta-secondary" %>
+      <%= mail_to @post.email, 'Mail', class: "btn btn-cta-secondary" %>
     <% end %>
     <% if @post.website.present? %>
       <%= link_to 'Website', @post.website, class: "btn btn-cta-secondary" %>
     <% end %>
   </div>
 
-  <!-- Show post content -->
-  <p> <%= @post.rich_content %></p>
+  <div class="description">
+    <span> <%= @post.rich_content %></span>
+  </div>
 
   <br>
 

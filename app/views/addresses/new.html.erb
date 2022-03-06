@@ -1,0 +1,22 @@
+<div class="forms">
+  <h1>Do you want to add an address?</h1><h2>(Optional)</h2>
+  <br>
+  <%= simple_form_for([@post, @address]) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+    <div class="form-inputs">
+      <%= f.input :name, placeholder: "Title", label: 'Address Title' %>
+      <%= f.input :location,
+                  label: 'Add an address or point of interest',
+                  input_html: { data: { geocoder_target: "address" }, class: "d-none" },
+                  wrapper_html: { data: { controller: "geocoder", geocoder_api_key_value: ENV['MAPBOX_API_KEY'] } } %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, 'Add another address', class: "btn btn-primary" %>
+      <%= link_to 'Continue', new_post_post_category_path(@post), class: 'btn btn-secondary' %>
+    </div>
+  <% end %>
+
+</div>

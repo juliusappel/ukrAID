@@ -2,6 +2,10 @@
   justify-content: space-between;
   background: $mainblue;
   height: 6rem;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -38,7 +42,10 @@
 }
 
 .bottom-menu {
+  position: absolute;
   background-color: $ukr_blue;
+  display: flex;
+  justify-content: space-between;
   overflow: hidden;
   position: fixed;
   bottom: 0;
@@ -54,11 +61,12 @@
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+  z-index: 10000;
 }
 
 /* Change the color of links on hover */
 .bottom-menu a:hover {
-  background-color: #ddd;
+  background-color: $ukr_blue;
   color: black;
 }
 

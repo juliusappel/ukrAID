@@ -1,2 +1,4 @@
-<h2><%= address.name %></h2>
-<p><%= address.location %></p>
+<h2><b><%= address.name %></b></h2>
+<p><small><%= address.location %></small></p>
+<hr>
+<%= link_to 'Navigate me here!', "https://www.google.com/maps/dir/?api=1&destination=#{address.latitude}%2C#{address.longitude}&dir_action=navigate" %>

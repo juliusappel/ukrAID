@@ -2,7 +2,13 @@
   max-width: 200px;
 }
 
-.mapboxgl-popup-content {
+// .mapboxgl-popup-content {
+//   text-align: center;
+//   font-family: "Open Sans", sans-serif;
+// }
+
+.mapboxgl-popup-content a {
+  font-weight: bold;
+  color: $ukr_yellow;
   text-align: center;
-  font-family: "Open Sans", sans-serif;
 }

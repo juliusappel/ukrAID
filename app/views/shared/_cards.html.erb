@@ -4,10 +4,17 @@
       <%= link_to post_path(post) do %>
       <li><div class="card">
         <h4><%= post.title %></h4>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam sint molestias at! Autem dignissimos explicabo architecto! Dolores veniam deserunt nihil qui nisi dignissimos sapiente, amet numquam, omnis perspiciatis exercitationem iusto. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum, excepturi consectetur soluta at assumenda sequi necessitatibus hic ipsum quas culpa aliquam tenetur unde consequatur facilis, omnis, aliquid nesciunt animi perferendis.</p>
-        <img src="https://picsum.photos/200/300" alt="placeholder">
+        <p><%= post.created_at %></p>
+        <% if post.photos.attached? %>
+          <span class="with-image"><%= post.rich_content %></span>
+          <%= cl_image_tag post.photos.first.key, alt: post.title %>
+        <% else %>
+          <span class="no-image"><%= post.rich_content %></span>
+        <% end %>
         <div class="iconset">
-          <div id="ctgry"><%= @categories.first.name %></div>
+          <% if post.categories.present? %>
+            <div id="ctgry"><%= post.categories[0].name %></div>
+          <% end %>
           <div id="vote_score"><%= post.vote_score %></div>
         </div>
       </div></li>
