@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   def welcome; end
 
   def home
-    @pending_posts = Post.all
+    @published_posts = Post.all
     # @published_posts = Post.where(pending: false)
     case params[:location]
     when "ukraine"
