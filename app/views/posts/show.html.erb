@@ -40,9 +40,27 @@
   </div>
 
   <br>
+
+  <!-- Map showing addresses of post -->
   <% if @post.addresses.present? %>
     <%= render 'shared/map' %>
   <% end %>
+
+  <br>
+  <!-- Save / Unsave this post to dashboard -->
+  <% if user_signed_in? %>
+    <% if current_user.favorited?(@post) %>
+      <!-- Unsave post -->
+    <% else %>
+      <!-- Save post -->
+    <% end %>
+  <% end %>
 </div>
 
-<!-- upvote functionality >
+<!-- upvote functionality -->
+
+<!-- Admin actions -->
+<% if current_user.role == 1 %>
+  <!-- Publish post -->
+  <!-- Delete post -->
+<% end %>
