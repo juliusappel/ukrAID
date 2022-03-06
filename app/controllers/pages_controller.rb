@@ -23,7 +23,7 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @posts = Post.where(user_id: current_user.id)
+    @my_posts = Post.where(user_id: current_user.id)
     @pending_posts = Post.where(pending: true) unless current_user.role.zero?
   end
 end
