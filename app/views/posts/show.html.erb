@@ -8,9 +8,11 @@
     </div>
     <% if @post.categories.present? %>
       <% @post.categories.each do |cat| %>
-        <div class="category">
-          <%= cat.name %>
-        </div>
+        <%= link_to category_path(cat) do %>
+          <div class="category">
+            <%= cat.name %>
+          </div>
+        <% end %>
       <% end %>
     <% end %>
   </div>
