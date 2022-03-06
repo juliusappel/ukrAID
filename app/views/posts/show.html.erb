@@ -50,17 +50,17 @@
   <!-- Save / Unsave this post to dashboard -->
   <% if user_signed_in? %>
     <% if current_user.favorited?(@post) %>
-      <%= link_to "unsave", toggle_save_post_path(post), class: "btn btn-primary", method: :post do %>
-        <i class="fa-solid fa-bookmark"></i>
-      <% end %>
+      <!-- Unsave post -->
     <% else %>
-      <%= link_to "save", toggle_save_post_path(post), class: "btn btn-primary", method: :post do %>
-        <i class="fa-regular fa-bookmark"></i>
-      <% end %>
+      <!-- Save post -->
     <% end %>
   <% end %>
 </div>
 
 <!-- upvote functionality -->
 
-<!-- Bookmark post -->
+<!-- Admin actions -->
+<% if current_user.role == 1 %>
+  <!-- Publish post -->
+  <!-- Delete post -->
+<% end %>
