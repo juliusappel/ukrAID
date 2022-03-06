@@ -1,0 +1,44 @@
+<div>
+  <h2>Ukraine / Україна</h2>
+  <ul class="category-list">
+    <% @ua_categories.each do |c| %>
+      <%= link_to category_path(c) do %>
+        <li><div class="category">
+        <h4><%= c.name %></h4>
+        <p class="amout_of_posts"><%= c.posts.length %></p>
+        </div>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+  <br>
+  <hr>
+  <br>
+  <h2>For us all</h2>
+  <ul class="category-list">
+    <% @both_categories.each do |c| %>
+      <%= link_to category_path(c) do %>
+        <li><div class="category">
+        <h4><%= c.name %></h4>
+        <p class="amout_of_posts"><%= c.posts.length %></p>
+        </div>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+  <br>
+  <hr>
+  <br>
+  <h2>Rest of the world</h2>
+  <ul class="category-list">
+    <% @world_categories.each do |c| %>
+      <%= link_to category_path(c) do %>
+        <li><div class="category">
+        <h4><%= c.name %></h4>
+        <p class="amout_of_posts"><%= c.posts.length %></p>
+        </div>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
