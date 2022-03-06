@@ -5,7 +5,8 @@ class PagesController < ApplicationController
   end
 
   def home
-    @published_posts = Post.all
+    @pending_posts = Post.all
+    # @published_posts = Post.where(pending: false)
     case params[:location]
     when "ukraine"
       @categories = Category.where(target_group: 0) + Category.where(target_group: 1)
