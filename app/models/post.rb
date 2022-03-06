@@ -12,6 +12,7 @@ class Post < ApplicationRecord
   SQL
 
   acts_as_favoritable
+  acts_as_votable
   accepts_nested_attributes_for :addresses
 
   # Validates necessary post elements
