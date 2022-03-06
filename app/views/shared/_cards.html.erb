@@ -7,7 +7,13 @@
         <p><%= post.created_at %></p>
         <% if post.photos.attached? %>
           <span class="with-image"><%= post.rich_content %></span>
-          <%= cl_image_tag post.photos.first.key, alt: post.title %>
+          <%= cl_image_tag post.photos.first.key, { loading: "lazy", width: "100%", alt: post.title,
+                            :transformation=>[
+                            { :aspect_ratio=>"16:9", :crop=>"fill", :gravity=>"auto:subject" },
+                            { :dpr=>"auto", :responsive => true },
+                            { :fetch_format=>:auto, :quality=>"auto:low" },
+                            { :flags=>"lossy" },
+                            ]} %>
         <% else %>
           <span class="no-image"><%= post.rich_content %></span>
         <% end %>
