@@ -45,12 +45,12 @@ class PostsController < ApplicationController
 
   def save_post
     current_user.favorite(@post)
-    redirect_to dashboard_path, notice: "Post was saved."
+    redirect_to post_path(@post), notice: "Post was saved."
   end
 
   def unsave_post
     current_user.unfavorite(@post)
-    redirect_to dashboard_path, notice: "Post was unsaved."
+    redirect_to post_path(@post), notice: "Post was unsaved."
   end
 
   def upvote_post

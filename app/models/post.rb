@@ -14,6 +14,8 @@ class Post < ApplicationRecord
   acts_as_favoritable
   acts_as_votable
   accepts_nested_attributes_for :addresses
+  after_initialize :calculate_sorting_score
+  attr_accessor :score
 
   # Validates necessary post elements
   validates :title, :rich_content, presence: true
@@ -39,4 +41,11 @@ class Post < ApplicationRecord
   #   |(?:(?:[a-z\u00a1-\uffff0-9]+-?)*[a-z\u00a1-\uffff0-9]+)(?:\.(?:[a-z\u00a1-\uffff0-9]+-?)*
   #   [a-z\u00a1-\uffff0-9]+)*(?:\.(?:[a-z\u00a1-\uffff]{2,})))(?::\d{2,5})
   #   ?(?:\/[^\s]*)?\z}i, allow_blank: true }
+
+  def calculate_sorting_score
+    unless new_record?
+      time_elapsed = (Time.zone.now - created_at) / 60 # time since submission (in hours)
+      self.sorting_score = (cached_weighted_score + 1) / time_elapsed
+    end
+  end
 end
