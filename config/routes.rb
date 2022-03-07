@@ -10,6 +10,8 @@ Rails.application.routes.draw do
     member do
       post 'save_post', to: "posts#save_post"
       post 'unsave_post', to: "posts#unsave_post"
+      post 'upvote_post', to: "posts#upvote_post"
+      post 'downvote_post', to: "posts#downvote_post"
     end
   end
 

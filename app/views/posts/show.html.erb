@@ -46,27 +46,50 @@
     <%= render 'shared/map' %>
   <% end %>
 
-  <br>
-  <!-- Save / Unsave this post to dashboard -->
   <% if user_signed_in? %>
+
+    <br>
+    <hr>
+    <br>
+
+    <!-- Save / Unsave this post to dashboard -->
     <% if current_user.favorited?(@post) %>
       <%= button_to "Delete bookmark", unsave_post_post_path, form_class: "unsave-btn" %>
     <% else %>
       <%= button_to "Bookmark post", save_post_post_path, form_class: "save-btn" %>
     <% end %>
-  <% end %>
 
-  <br>
-  <!-- Vote functionality -->
-<% if user_signed_in? %>
-  
-<% end %>
+    <br>
+    <hr>
+    <br>
+
+    <!-- Vote functionality -->
+    <div class="voting">
+      <% case current_user.voted_as_when_voted_for @post %>
+      <% when nil %>
+        <%= button_to "Upvote post", upvote_post_post_path, form_class: "upvote-btn" %>
+        <div id="vote_score"><%= @post.cached_weighted_score %></div>
+        <%= button_to "Downvote post", downvote_post_post_path, form_class: "downvote-btn" %>
+      <% when true %>
+        <!-- Upvote (Active => no button / different design) -->
+        <div id="vote_score"><%= @post.cached_weighted_score %></div>
+        <%= button_to "Downvote post", downvote_post_post_path, form_class: "downvote-btn" %>
+      <% when false %>
+        <%= button_to "Upvote post", upvote_post_post_path, form_class: "upvote-btn" %>
+        <div id="vote_score"><%= @post.cached_weighted_score %></div>
+        <!-- Downvote (Active => no button / different design) -->
+      <% end %>
+    </div>
+
+    <!-- Admin actions -->
+    <% if current_user.role == 1 %>
+      <br>
+      <hr>
+      <br>
+      <div class="admin-action">
+        <!-- Publish post -->
+        <!-- Delete post -->
+      </div>
+    <% end %>
+  <% end %>
 </div>
-
-<!-- Admin actions -->
-<% if user_signed_in? %>
-  <% if current_user.role == 1 %>
-    <!-- Publish post -->
-    <!-- Delete post -->
-  <% end %>
-<% end %>

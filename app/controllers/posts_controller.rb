@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :find_post, only: %i[show destroy save_post unsave_post]
+  before_action :find_post, only: %i[show destroy save_post unsave_post upvote_post downvote_post]
   before_action :authenticate_user!
   skip_before_action :authenticate_user!, only: :show
 
@@ -25,7 +25,6 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user_id = current_user.id
-    @post.vote_score = 1
     @post.pending = true
     if @post.save!
       redirect_to new_post_address_path(@post), notice: "Your post was successfully submitted. Please wait for it to be reviewed by an Admin"
@@ -52,6 +51,18 @@ class PostsController < ApplicationController
   def unsave_post
     current_user.unfavorite(@post)
     redirect_to dashboard_path, notice: "Post was unsaved."
+  end
+
+  def upvote_post
+    @post.undisliked_by current_user if current_user.voted_for? @post
+    current_user.likes @post
+    redirect_to post_path(@post), notice: "Post was upvoted."
+  end
+
+  def downvote_post
+    @post.unliked_by current_user if current_user.voted_for? @post
+    current_user.dislikes @post
+    redirect_to post_path(@post), notice: "Post was downvoted."
   end
 
   private
