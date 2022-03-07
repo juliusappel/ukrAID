@@ -8,7 +8,8 @@ Rails.application.routes.draw do
 
   resources :posts, only: %i[show new create destroy] do
     member do
-      post 'toggle_save', to: "posts#toggle_save"
+      post 'save_post', to: "posts#save_post"
+      post 'unsave_post', to: "posts#unsave_post"
     end
   end
 

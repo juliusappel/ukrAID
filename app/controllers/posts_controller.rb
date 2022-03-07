@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :find_post, only: %i[show destroy save_post]
+  before_action :find_post, only: %i[show destroy save_post unsave_post]
   before_action :authenticate_user!
   skip_before_action :authenticate_user!, only: :show
 
@@ -45,18 +45,13 @@ class PostsController < ApplicationController
   end
 
   def save_post
-    
+    current_user.favorite(@post)
+    redirect_to dashboard_path, notice: "Post was saved."
   end
 
-  def toggle_save
-    @post = Post.find(params[:id])
-    @user = current_user
-    @user.favorited?(@post) ? @user.unfavorite(@post) : @user.favorite(@post)
-    if @user.favorited?(@post)
-      redirect_to dashboard_path, notice: "Post was saved."
-    else
-      redirect_to dashboard_path, notice: "Post was unsaved."
-    end
+  def unsave_post
+    current_user.unfavorite(@post)
+    redirect_to dashboard_path, notice: "Post was unsaved."
   end
 
   private
@@ -64,7 +59,6 @@ class PostsController < ApplicationController
   def find_post
     @post = Post.find(params[:id])
   end
-
 
   def post_params
     params.require(:post).permit(:title, :rich_content, :pending, :phone_number, :email, :website, photos: [])

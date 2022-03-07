@@ -50,9 +50,9 @@
   <!-- Save / Unsave this post to dashboard -->
   <% if user_signed_in? %>
     <% if current_user.favorited?(@post) %>
-      <!-- Unsave post -->
+      <%= button_to "Delete bookmark", unsave_post_post_path, form_class: "unsave-btn" %>
     <% else %>
-      <!-- Save post -->
+      <%= button_to "Bookmark post", save_post_post_path, form_class: "save-btn" %>
     <% end %>
   <% end %>
 </div>
