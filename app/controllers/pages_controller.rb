@@ -6,7 +6,12 @@ class PagesController < ApplicationController
 
   def home
     @categories = Category.all
-    @posts = Post.all
+    if params[:query].present?
+      sql_query = "post.title @@ :query"
+      @posts = Post.all
+    else
+      @posts = Post.all
+    end
   end
 
   def dashboard
