@@ -63,7 +63,9 @@
 <% end %>
 
 <!-- Admin actions -->
-<% if current_user.role == 1 %>
-  <!-- Publish post -->
-  <!-- Delete post -->
+<% if user_signed_in? %>
+  <% if current_user.role == 1 %>
+    <!-- Publish post -->
+    <!-- Delete post -->
+  <% end %>
 <% end %>
