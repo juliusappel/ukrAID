@@ -6,9 +6,14 @@ Rails.application.routes.draw do
 
   resources :categories, only: %i[show]
 
-  resources :posts, only: %i[show new create destroy]
+  resources :posts, only: %i[show new create destroy] do
+    member do
+      post 'toggle_save', to: "posts#toggle_save"
+    end
+  end
 
   get :dashboard, to: 'pages#dashboard'
+  get :all_categories, to: 'categories#all'
 
   resources :posts, only: %i[new create] do
     resources :addresses, only: %i[new create]

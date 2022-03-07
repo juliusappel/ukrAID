@@ -44,9 +44,20 @@ class PostsController < ApplicationController
     end
   end
 
+  def toggle_save
+    @post = Post.find(params[:id])
+    @user = current_user
+    @user.favorited?(@post) ? @user.unfavorite(@post) : @user.favorite(@post)
+    if @user.favorited?(@post)
+      redirect_to dashboard_path, notice: "Post was saved."
+    else
+      redirect_to dashboard_path, notice: "Post was unsaved."
+    end
+  end
+
   private
 
   def post_params
-    params.require(:post).permit(:title, :rich_content, :phone_number, :email, :website, photos: [])
+    params.require(:post).permit(:title, :rich_content, :pending, :phone_number, :email, :website, photos: [])
   end
 end

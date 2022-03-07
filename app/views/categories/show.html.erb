@@ -1,0 +1,7 @@
+<div class="category-show">
+  <% if @category.posts.length == 0 %>
+    <p id="no-posts">There are no posts for this category.</p>
+  <% else %>
+    <%= render 'shared/cards' %>
+  <% end %>
+</div>

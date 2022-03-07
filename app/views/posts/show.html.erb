@@ -6,10 +6,14 @@
     <div class="upvotes">
       <%= @post.vote_score %>
     </div>
-    <% @post.categories.each do |cat| %>
-      <div class="category">
-        <%= cat.name %>
-      </div>
+    <% if @post.categories.present? %>
+      <% @post.categories.each do |cat| %>
+        <%= link_to category_path(cat) do %>
+          <div class="category">
+            <%= cat.name %>
+          </div>
+        <% end %>
+      <% end %>
     <% end %>
   </div>
 
@@ -21,13 +25,21 @@
 
   <div class="contact-details">
     <% if @post.phone_number.present? %>
-      <%= phone_to @post.phone_number, 'Call', class: "btn btn-cta-primary" %>
+      <%= phone_to @post.phone_number, class: "btn-cta-call" do %>
+        <i class="fas fa-phone-alt"></i> Call
+      <% end %>
     <% end %>
+
     <% if @post.email.present? %>
-      <%= mail_to @post.email, 'Mail', class: "btn btn-cta-secondary" %>
+      <%= mail_to @post.email, class: "btn-cta" do %>
+        <i class="fas fa-at"></i> Mail
+      <% end %>
     <% end %>
+
     <% if @post.website.present? %>
-      <%= link_to 'Website', @post.website, class: "btn btn-cta-secondary" %>
+      <%= link_to @post.website, class: "btn-cta" do %>
+        <i class="fas fa-globe"></i> Website
+      <% end %>
     <% end %>
   </div>
 
@@ -36,9 +48,27 @@
   </div>
 
   <br>
+
+  <!-- Map showing addresses of post -->
   <% if @post.addresses.present? %>
     <%= render 'shared/map' %>
   <% end %>
+
+  <br>
+  <!-- Save / Unsave this post to dashboard -->
+  <% if user_signed_in? %>
+    <% if current_user.favorited?(@post) %>
+      <!-- Unsave post -->
+    <% else %>
+      <!-- Save post -->
+    <% end %>
+  <% end %>
 </div>
 
-<!-- upvote functionality >
+<!-- upvote functionality -->
+
+<!-- Admin actions -->
+<% if current_user.role == 1 %>
+  <!-- Publish post -->
+  <!-- Delete post -->
+<% end %>
