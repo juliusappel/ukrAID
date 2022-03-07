@@ -6,9 +6,23 @@
   margin-top: -6rem;
 }
 
+#question {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  p {
+    color: white;
+    font-size: 25px;
+    font-weight: bolder;
+    text-align: center;
+  }
+}
+
 #flag1 {
   position: absolute;
-  top: 30%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
 

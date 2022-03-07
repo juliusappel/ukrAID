@@ -24,15 +24,17 @@
 
 
   <div class="contact-details">
-    <% if @post.phone_number.present? %>
-      <%= phone_to @post.phone_number, 'Call', class: "btn btn-cta-primary" %>
-    <% end %>
+    <!-- <% if @post.phone_number.present? %> !-->
+      <%= phone_to @post.phone_number, "tel:#{@post.phone_number}" %>
+    <!-- <% end %> !-->
     <% if @post.email.present? %>
-      <%= mail_to @post.email, 'Mail', class: "btn btn-cta-secondary" %>
+      <%= mail_to "#{@post.email}", 'Mail' %>
     <% end %>
     <% if @post.website.present? %>
-      <%= link_to 'Website', @post.website, class: "btn btn-cta-secondary" %>
+      <%= link_to 'Website', @post.website %>
     <% end %>
+    <%= link_to 'Test', root_path %>
+    h
   </div>
 
   <div class="description">
