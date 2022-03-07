@@ -52,10 +52,27 @@
     color: $ukr_yellow;
   }
 
-  // a.pending {
-  //   display: block;
-  //   position: relative;
-  //   top: 6.5rem;
-  //   visibility: hidden;
-  // }
+  #pending::before {
+    content: '';
+    display: block;
+    height: 6.5rem;
+    margin-top: -6.5rem;
+    visibility: hidden;
+  }
+
+  #saved::before {
+    content: '';
+    display: block;
+    height: 6.5rem;
+    margin-top: -6.5rem;
+    visibility: hidden;
+  }
+
+  #published::before {
+    content: '';
+    display: block;
+    height: 6.5rem;
+    margin-top: -6.5rem;
+    visibility: hidden;
+  }
 }
