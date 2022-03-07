@@ -25,13 +25,21 @@
 
   <div class="contact-details">
     <% if @post.phone_number.present? %>
-      <%= phone_to @post.phone_number, 'Call', class: "btn btn-cta-primary" %>
+      <%= phone_to @post.phone_number, class: "btn-cta-call" do %>
+        <i class="fas fa-phone-alt"></i> Call
+      <% end %>
     <% end %>
+
     <% if @post.email.present? %>
-      <%= mail_to @post.email, 'Mail', class: "btn btn-cta-secondary" %>
+      <%= mail_to @post.email, class: "btn-cta" do %>
+        <i class="fas fa-at"></i> Mail
+      <% end %>
     <% end %>
+
     <% if @post.website.present? %>
-      <%= link_to 'Website', @post.website, class: "btn btn-cta-secondary" %>
+      <%= link_to @post.website, class: "btn-cta" do %>
+        <i class="fas fa-globe"></i> Website
+      <% end %>
     <% end %>
   </div>
 

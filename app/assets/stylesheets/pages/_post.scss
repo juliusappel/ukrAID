@@ -12,7 +12,7 @@
   p {
     margin-top: -0.5rem;
     font-size: 12px;
-    color: #A1B3CC;
+    color: $datecolor;
     margin-bottom: 0.6rem;
   }
 
@@ -39,6 +39,11 @@
   flex-flow: row wrap;
   margin-bottom: 1rem;
 
+  a {
+    text-decoration: none;
+    color: $navy;
+  }
+
   .upvotes {
     background-color: $ukr_yellow;
     padding: 0.1rem 0.6rem;
@@ -62,4 +67,41 @@
 
 .mapboxgl-map {
   border-radius: 10px;
+}
+
+.contact-details {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.btn-cta {
+    background-color: $lightblue;
+    padding: 5px 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: $navy;
+    border: 1px solid rgb(221, 221, 221);
+    margin-right: 0.5rem;
+    transition: 0.3s;
+  }
+
+.btn-cta:hover {
+    background-color: white;
+    color: $navy;
+  }
+
+.btn-cta-call {
+    background-color: $ukr_yellow;
+    padding: 5px 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: $navy;
+    border: 1px solid rgb(221, 221, 221);
+    margin-right: 0.5rem;
+    transition: 0.3s;
+}
+
+.btn-cta-call:hover {
+  background-color: white;
+  color: $navy;
 }
