@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :posts
   acts_as_favoritor
+  acts_as_voter
 
   validates :username, :role, presence: true
   validates :username, uniqueness: true
