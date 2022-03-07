@@ -7,7 +7,5 @@ export default class extends Controller {
     event.preventDefault()
     this.searchbarTarget.classList.toggle("search-box-active")
     this.inputTarget.focus()
-    console.log(this.searchbarTarget)
-    console.log(this.bodyTarget)
   }
 }
