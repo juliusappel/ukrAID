@@ -55,12 +55,13 @@
       <%= button_to "Bookmark post", save_post_post_path, form_class: "save-btn" %>
     <% end %>
   <% end %>
-</div>
 
-<!-- Vote functionality -->
+  <br>
+  <!-- Vote functionality -->
 <% if user_signed_in? %>
-  <%= button_to "Upvote", post_path(@post) %>
+  
 <% end %>
+</div>
 
 <!-- Admin actions -->
 <% if user_signed_in? %>

@@ -3,7 +3,7 @@
 
 <% if current_user.role == 1 %>
   <div class="dashboard-card">
-    <h4>Pending posts</h4>
+    <h4>Pending posts (<%= @pending_posts.length %>)</h4>
     <% if @pending_posts.any? %>
       <% @posts = @pending_posts %>
       <%= render 'shared/cards' %>
@@ -15,7 +15,7 @@
 <% end %>
 
 <div class="dashboard-card">
-  <h4>Your saved posts</h4>
+  <h4>Your saved posts (<%= @saved_posts.length %>)</h4>
   <% if @saved_posts.any? %>
     <% @posts = @saved_posts %>
     <%= render 'shared/cards' %>
@@ -27,7 +27,7 @@
 <hr>
 
 <div class="dashboard-card">
-  <h4>Your posts</h4>
+  <h4>Your posts (<%= @my_posts.length %>)</h4>
   <% if @my_posts.any? %>
     <% @posts = @my_posts %>
     <%= render 'shared/cards' %>
