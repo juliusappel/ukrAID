@@ -1,0 +1,71 @@
+.unsave-btn {
+  display: block;
+  background-color: lightgray;
+  padding: 1rem;
+  width: 100%;
+  border-radius: 10px;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  color: $navy;
+  font-weight: bolder;
+}
+
+.save-btn {
+  display: block;
+  background-color: $ukr_yellow;
+  padding: 1rem;
+  width: 100%;
+  border-radius: 10px;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  color: $navy;
+  font-weight: bolder;
+}
+
+.voting {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+
+  a {
+    text-decoration: none;
+  }
+
+  #vote_score {
+    flex-grow: 1;
+    background-color: lightgray;
+    color: $navy;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .upvote-btn {
+    background-color: rgb(75, 160, 75);
+    color: white;
+    border-radius: 10px 0 0 10px;
+    padding: 1rem;
+  }
+
+  .upvote-btn-blurred {
+    background-color: rgb(67, 104, 67);
+    color: lightgray;
+    border-radius: 10px 0 0 10px;
+    padding: 1rem;
+  }
+
+  .downvote-btn {
+    background-color: rgb(214, 77, 77);
+    color: white;
+    border-radius: 0 10px 10px 0;
+    padding: 1rem;
+  }
+
+  .downvote-btn-blurred {
+    background-color: rgb(136, 72, 72);
+    color: lightgray;
+    border-radius: 0 10px 10px 0;
+    padding: 1rem;
+  }
+}

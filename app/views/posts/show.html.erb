@@ -55,16 +55,16 @@
   <% end %>
 
   <% if user_signed_in? %>
-
     <br>
-    <hr>
-    <br>
-
     <!-- Save / Unsave this post to dashboard -->
     <% if current_user.favorited?(@post) %>
-      <%= button_to "Delete bookmark", unsave_post_post_path, form_class: "unsave-btn" %>
+      <%= link_to unsave_post_post_path, method: :post, class: "unsave-btn" do %>
+        <i class="fas fa-bookmark"></i> Delete bookmark
+      <% end %>
     <% else %>
-      <%= button_to "Bookmark post", save_post_post_path, form_class: "save-btn" %>
+      <%= link_to save_post_post_path, method: :post, class: "save-btn" do %>
+        <i class="far fa-bookmark"></i> Save post
+      <% end %>
     <% end %>
 
     <br>
@@ -75,24 +75,32 @@
     <div class="voting">
       <% case current_user.voted_as_when_voted_for @post %>
       <% when nil %>
-        <%= button_to "Upvote post", upvote_post_post_path, form_class: "upvote-btn" %>
+        <%= link_to upvote_post_post_path, method: :post, class: "upvote-btn" do %>
+          <i class="fas fa-arrow-alt-circle-up"></i> Upvote
+        <% end %>
         <div id="vote_score"><%= @post.cached_weighted_score %></div>
-        <%= button_to "Downvote post", downvote_post_post_path, form_class: "downvote-btn" %>
+        <%= link_to downvote_post_post_path, method: :post, class: "downvote-btn" do %>
+          Downvote <i class="fas fa-arrow-alt-circle-down"></i>
+        <% end %>
       <% when true %>
         <!-- Upvote (Active => no button / different design) -->
+        <div class="upvote-btn-blurred"><i class="fas fa-arrow-alt-circle-up"></i> Upvote</div>
         <div id="vote_score"><%= @post.cached_weighted_score %></div>
-        <%= button_to "Downvote post", downvote_post_post_path, form_class: "downvote-btn" %>
+        <%= link_to downvote_post_post_path, method: :post, class: "downvote-btn" do %>
+          Downvote <i class="fas fa-arrow-alt-circle-down"></i>
+        <% end %>
       <% when false %>
-        <%= button_to "Upvote post", upvote_post_post_path, form_class: "upvote-btn" %>
+        <%= link_to upvote_post_post_path, method: :post, class: "upvote-btn" do %>
+          <i class="fas fa-arrow-alt-circle-up"></i> Upvote
+        <% end %>
         <div id="vote_score"><%= @post.cached_weighted_score %></div>
         <!-- Downvote (Active => no button / different design) -->
+        <div class="downvote-btn-blurred">Downvote <i class="fas fa-arrow-alt-circle-down"></i></div>
       <% end %>
     </div>
 
     <!-- Admin actions -->
     <% if current_user.role == 1 %>
-      <br>
-      <hr>
       <br>
       <div class="admin-action">
         <!-- Publish post -->
