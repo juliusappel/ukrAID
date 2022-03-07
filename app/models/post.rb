@@ -12,16 +12,14 @@ class Post < ApplicationRecord
   SQL
 
   acts_as_favoritable
+  acts_as_votable
   accepts_nested_attributes_for :addresses
 
   # Validates necessary post elements
-  validates :title, :vote_score, :rich_content, presence: true
+  validates :title, :rich_content, presence: true
 
   # Validates a minimum title length of 4 characters & maximum title length of 60 chharacters
   validates :title, length: { in: 4..60 }
-
-  # Validation to only allow integers as vote score
-  validates :vote_score, numericality: { only_integer: true }
 
   # Validates phone number (Regex source: https://phoneregex.com/)
   # validates :phone_number, format: { with: %r{\+(9[976]\d|8[987530]\d|6[987]\d|

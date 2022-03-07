@@ -1,0 +1,29 @@
+.dashboard-head {
+  background-color: $navy;
+  height: 150px;
+  padding: 1rem;
+  color: white;
+
+  h1 {
+    color: white;
+    font-weight: bolder;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.dashboard {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  margin-bottom: 4rem;
+
+  a {
+    text-decoration: none;
+  }
+
+  h1 {
+    color: white;
+    font-weight: bolder;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
