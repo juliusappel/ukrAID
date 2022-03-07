@@ -4,7 +4,7 @@
 
   <div class="icons">
     <div class="upvotes">
-      <%= @post.vote_score %>
+      <%= @post.cached_weighted_score %>
     </div>
     <% if @post.categories.present? %>
       <% @post.categories.each do |cat| %>

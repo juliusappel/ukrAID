@@ -21,7 +21,7 @@
           <% if post.categories.present? %>
             <div id="ctgry"><%= post.categories[0].name %></div>
           <% end %>
-          <div id="vote_score"><%= post.vote_score %></div>
+          <div id="vote_score"><%= post.cached_weighted_score %></div>
         </div>
       </div></li>
       <% end %>
