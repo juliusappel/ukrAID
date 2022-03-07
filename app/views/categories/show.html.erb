@@ -1,3 +1,7 @@
+<% content_for :title do %>
+  <%= @category.name %> | ukrAID - Stand with Ukraine
+<% end %>
+
 <div class="category-show">
   <% if @category.posts.length == 0 %>
     <p id="no-posts">There are no posts for this category.</p>
