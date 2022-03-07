@@ -1,9 +1,9 @@
 class PostsController < ApplicationController
+  before_action :find_post, only: %i[show destroy save_post]
   before_action :authenticate_user!
   skip_before_action :authenticate_user!, only: :show
 
   def show
-    @post = Post.find(params[:id])
     @categories = PostCategory.where(post_id: @post.id)
     @post_categories = Category.where(id: @categories[0].category_id)
     @markers = @post.addresses.geocoded.map do |a|
@@ -44,6 +44,10 @@ class PostsController < ApplicationController
     end
   end
 
+  def save_post
+    
+  end
+
   def toggle_save
     @post = Post.find(params[:id])
     @user = current_user
@@ -56,6 +60,11 @@ class PostsController < ApplicationController
   end
 
   private
+
+  def find_post
+    @post = Post.find(params[:id])
+  end
+
 
   def post_params
     params.require(:post).permit(:title, :rich_content, :pending, :phone_number, :email, :website, photos: [])

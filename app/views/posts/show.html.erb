@@ -59,7 +59,7 @@
 
 <!-- Vote functionality -->
 <% if user_signed_in? %>
-  <%= button_to "Upvote", post_path(current_user.likes @post) %>
+  <%= button_to "Upvote", post_path(@post) %>
 <% end %>
 
 <!-- Admin actions -->
