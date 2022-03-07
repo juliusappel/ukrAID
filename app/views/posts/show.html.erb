@@ -1,6 +1,9 @@
 <% content_for :title do %>
   <%= @post.title %> | ukrAID - Stand with Ukraine
 <% end %>
+<% content_for :meta_description, @post.title %>
+<% content_for :meta_image, cl_image_path(@post.photos.first.key) %>
+
 
 <div class="post">
   <h1><%= @post.title %></h1>
