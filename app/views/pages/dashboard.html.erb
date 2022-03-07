@@ -1,40 +1,41 @@
-<h2>Hi <%= current_user.username %>!</h2>
-<h3>My dashboard</h3>
+<div class="dashboard-head">
+  <h1>Dashboard</h1>
+  <h2>Hi <%= current_user.username %>!</h2>
+</div>
 
-<% if current_user.role == 1 %>
+<div class="dashboard">
+  <% if current_user.role == 1 %>
+    <div class="dashboard-card">
+      <h1>Pending posts</h1>
+      <% if @pending_posts.any? %>
+        <% @posts = @pending_posts %>
+        <%= render 'shared/cards' %>
+      <% else %>
+        <p>No outstanding posts!</p>
+      <% end %>
+    </div>
+    <hr>
+  <% end %>
+
   <div class="dashboard-card">
-    <h4>Pending posts</h4>
-    <% if @pending_posts.any? %>
-      <% @posts = @pending_posts %>
+    <h4>Your saved posts</h4>
+    <% if @saved_posts.any? %>
+      <% @posts = @saved_posts %>
       <%= render 'shared/cards' %>
     <% else %>
-      <p>No outstanding posts!</p>
+      <p>You haven't saved any posts yet!</p>
     <% end %>
   </div>
+
   <hr>
-<% end %>
 
-<div class="dashboard-card">
-  <h4>Your saved posts</h4>
-  <% if @saved_posts.any? %>
-    <% @posts = @saved_posts %>
-    <%= render 'shared/cards' %>
-  <% else %>
-    <p>You haven't saved any posts yet!</p>
-  <% end %>
+  <div class="dashboard-card">
+    <h4>Your posts</h4>
+    <% if @my_posts.any? %>
+      <% @posts = @my_posts %>
+      <%= render 'shared/cards' %>
+    <% else %>
+      <p>You haven't posted anything yet - <%= link_to 'do it now', new_post_path %>!</p>
+    <% end %>
+  </div>
 </div>
-
-<hr>
-
-<div class="dashboard-card">
-  <h4>Your posts</h4>
-  <% if @my_posts.any? %>
-    <% @posts = @my_posts %>
-    <%= render 'shared/cards' %>
-  <% else %>
-    <p>You haven't posted anything yet - <%= link_to 'do it now', new_post_path %>!</p>
-  <% end %>
-</div>
-<br>
-<br>
-<br>

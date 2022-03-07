@@ -1,9 +1,9 @@
-<div>
-  <h2>Ukraine / Україна</h2>
+<div class="all-categories">
+  <h1>Ukraine / Україна</h1>
   <ul class="category-list">
     <% @ua_categories.each do |c| %>
       <%= link_to category_path(c) do %>
-        <li><div class="category">
+        <li><div class="category-wrap">
         <h4><%= c.name %></h4>
         <p class="amout_of_posts"><%= c.posts.length %></p>
         </div>
@@ -13,8 +13,7 @@
   </ul>
   <br>
   <hr>
-  <br>
-  <h2>For us all</h2>
+  <h1>For everyone</h1>
   <ul class="category-list">
     <% @both_categories.each do |c| %>
       <%= link_to category_path(c) do %>
@@ -28,8 +27,7 @@
   </ul>
   <br>
   <hr>
-  <br>
-  <h2>Rest of the world</h2>
+  <h1>Rest of the world</h1>
   <ul class="category-list">
     <% @world_categories.each do |c| %>
       <%= link_to category_path(c) do %>
