@@ -1,3 +1,7 @@
+<% content_for :title do %>
+  <%= @post.title %> | ukrAID - Stand with Ukraine
+<% end %>
+
 <div class="post">
   <h1><%= @post.title %></h1>
   <p>Posted by <em><%= @post.user.username %></em> on <%= @post.created_at %></p>
