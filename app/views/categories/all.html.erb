@@ -9,7 +9,7 @@
       <%= link_to category_path(c) do %>
         <li><div class="category-wrap">
         <h4><%= c.name %></h4>
-        <p class="amout_of_posts"><%= c.posts.length %></p>
+        <p class="amout_of_posts"><%= c.posts.where(pending: false).length %></p>
         </div>
         </li>
       <% end %>
@@ -23,7 +23,7 @@
       <%= link_to category_path(c) do %>
         <li><div class="category">
         <h4><%= c.name %></h4>
-        <p class="amout_of_posts"><%= c.posts.length %></p>
+        <p class="amout_of_posts"><%= c.posts.where(pending: false).length %></p>
         </div>
         </li>
       <% end %>
@@ -37,7 +37,7 @@
       <%= link_to category_path(c) do %>
         <li><div class="category">
         <h4><%= c.name %></h4>
-        <p class="amout_of_posts"><%= c.posts.length %></p>
+        <p class="amout_of_posts"><%= c.posts.where(pending: false).length %></p>
         </div>
         </li>
       <% end %>
