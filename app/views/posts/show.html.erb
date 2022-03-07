@@ -57,7 +57,10 @@
   <% end %>
 </div>
 
-<!-- upvote functionality -->
+<!-- Vote functionality -->
+<% if user_signed_in? %>
+  <%= button_to "Upvote", post_path(current_user.likes @post) %>
+<% end %>
 
 <!-- Admin actions -->
 <% if current_user.role == 1 %>
