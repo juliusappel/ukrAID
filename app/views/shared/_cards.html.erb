@@ -18,10 +18,12 @@
           <span class="no-image"><%= post.rich_content %></span>
         <% end %>
         <div class="iconset">
-          <% if post.categories.present? %>
+          <!-- <% if post.categories.present? %>
             <div id="ctgry"><%= post.categories[0].name %></div>
-          <% end %>
-          <div id="vote_score"><%= post.vote_score %></div>
+          <% end %> !-->
+          <div id="vote_score">
+            <i class="fas fa-arrow-alt-circle-up"></i> <%= post.vote_score %>
+          </div>
         </div>
       </div></li>
       <% end %>
