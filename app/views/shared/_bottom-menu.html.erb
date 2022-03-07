@@ -1,8 +1,14 @@
 <div class="bottom-menu">
-  <%= link_to 'Feed', home_path, class: 'active' %>
-  <%= link_to new_post_path do %>
-    [ + ]
+  <%= link_to home_path, class: 'active' do %>
+    <i class="fa-solid fa-house"></i>
   <% end %>
-  <%= link_to 'Dashboard', dashboard_path %>
-  <%= link_to 'Login', new_user_session_path %>
+  <%= link_to new_post_path do %>
+    <i class="fas fa-plus-circle"></i>
+  <% end %>
+  <%= link_to dashboard_path do %>
+    <i class="fa-solid fa-user"></i>
+  <% end %>
+  <a class="search-btn" href="#">
+    <i data-action="click->search#expand" class="fa-solid fa-magnifying-glass"></i>
+  </a>
 </div>
