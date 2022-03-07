@@ -24,6 +24,8 @@ class PagesController < ApplicationController
 
   def dashboard
     @my_posts = Post.where(user_id: current_user.id)
+    @my_pending_posts = Post.where(user_id: current_user.id, pending: true)
+    @my_published_posts = Post.where(user_id: current_user.id, pending: false)
     @pending_posts = Post.where(pending: true) unless current_user.role.zero?
     @saved_posts = current_user.all_favorited
   end

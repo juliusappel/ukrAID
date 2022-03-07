@@ -29,8 +29,19 @@
 <div class="dashboard-card">
   <h4>Your posts (<%= @my_posts.length %>)</h4>
   <% if @my_posts.any? %>
-    <% @posts = @my_posts %>
-    <%= render 'shared/cards' %>
+
+    <% if @my_published_posts.any? %>
+      <h5>Your published posts (<%= @my_published_posts.length %>)</h5>
+      <% @posts = @my_published_posts %>
+      <%= render 'shared/cards' %>
+    <% end %>
+
+    <% if @my_pending_posts.any? %>
+      <h5>Your pending posts (<%= @my_pending_posts.length %>)</h5>
+      <% @posts = @my_pending_posts %>
+      <%= render 'shared/cards' %>
+    <% end %>
+
   <% else %>
     <p>You haven't posted anything yet - <%= link_to 'do it now', new_post_path %>!</p>
   <% end %>
