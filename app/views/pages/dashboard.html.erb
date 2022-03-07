@@ -1,18 +1,23 @@
-<h2>Hi <%= current_user.username %>!</h2>
-<h3>My dashboard</h3>
+<div class="dashboard-head">
+  <h1>Dashboard</h1>
+  <h2>Hi <%= current_user.username %>!</h2>
+</div>
 
-<% if current_user.role == 1 %>
-  <div class="dashboard-card">
-    <h4>Pending posts (<%= @pending_posts.length %>)</h4>
-    <% if @pending_posts.any? %>
-      <% @posts = @pending_posts %>
-      <%= render 'shared/cards' %>
-    <% else %>
-      <p>No outstanding posts!</p>
-    <% end %>
-  </div>
+<div class="dashboard">
+  <% if current_user.role == 1 %>
+    <div class="dashboard-card">
+      <h4>Pending posts (<%= @pending_posts.length %>)</h4>
+      <% if @pending_posts.any? %>
+        <% @posts = @pending_posts %>
+        <%= render 'shared/cards' %>
+      <% else %>
+        <p>No outstanding posts!</p>
+      <% end %>
+    </div>
+    <hr>
+  <% end %>
+
   <hr>
-<% end %>
 
 <div class="dashboard-card">
   <h4>Your saved posts (<%= @saved_posts.length %>)</h4>
