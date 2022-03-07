@@ -1,6 +1,7 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: $mainblue;
+  padding-top: 25px;
   height: 6rem;
   width: 100%;
   position: fixed;
@@ -17,7 +18,11 @@
   margin-left: 1rem;
 }
 
-.search-box{
+.search-box {
+  width: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: $ukr_blue;
   transform: translate(404px, -49px);
   transition: 1s all ease;
@@ -25,47 +30,47 @@
   border-radius: 40px;
   padding: 10px;
   padding-right: 0;
-  width: 240px;
+}
+
+.search-input {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 3;
 }
 
 .search-box-active {
-  transform: translate(77px, -49px) !important
+  transform: translate(77px, -49px) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .search-txt {
   border: none;
-  margin-left: 2px;
-  margin-right: 2px;
-  background: none;
+  background-color: transparent !important;
+  box-shadow: none;
+  color: white !important;
+  box-shadow: none !important;
   outline: none;
   float: left;
-  padding: 0;
-  color: white;
   font-size: 16 px;
   transition: 0.4s;
   line-height: 40px;
-}
 
-.search-btn:hover > .search-txt {
-  width: 240px;
+  &::placeholder {
+    color: white;
+  }
 }
 
 .search-btn {
   color: white;
   float: right;
-  width: 30px;
+  width: 20px;
   margin-right: 10px;
   height: 30px;
-  border-radius: 50%;
-  background: $ukr_blue;
-  display: flex;
+  border: none;
+  background: transparent;
   text-decoration: none;
-  align-items: center;
-  justify-content: center;
   transition: 0.4s;
 }
 

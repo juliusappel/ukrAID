@@ -18,13 +18,17 @@
         <i class="fa-solid fa-magnifying-glass"></i>
       </a> %>
       <%= form_tag home_path, method: :get do %>
-        <%= text_field_tag :query,
-          params[:query],
-          class: "search-txt form-control",
-          placeholder: "Search Posts",
-          data: { search_target: "input" }
-        %>
-        <%= submit_tag "Search", class: "btn btn-primary" %>
+        <div class="search-input">
+          <%= text_field_tag :query,
+            params[:query],
+            class: "search-txt form-control",
+            placeholder: "Search Posts",
+            data: { search_target: "input" }
+          %>
+          <%= button_tag type: "submit", class: "btn btn-primary search-btn" do %>
+            <i class="fa-solid fa-magnifying-glass"></i>
+          <% end %>
+        </div>
       <% end %>
     </div>
 
