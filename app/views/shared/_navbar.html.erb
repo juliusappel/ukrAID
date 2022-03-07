@@ -12,6 +12,24 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
+    <div class="search-box" data-search-target="searchbar">
+      <%# <input class="search-txt form-control" type="text" name="query" placeholder="Type to Search" data-search-target="input">
+      <a class="search-btn" href="#">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </a> %>
+      <%= form_tag home_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "search-txt form-control",
+          placeholder: "Search Posts",
+          data: { search_target: "input" }
+        %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+
+
+
     <!--
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
