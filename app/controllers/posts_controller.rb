@@ -1,11 +1,10 @@
 class PostsController < ApplicationController
-  before_action :find_post, only: %i[show destroy save_post unsave_post upvote_post downvote_post]
+  before_action :find_post, only: %i[show destroy save_post unsave_post upvote_post downvote_post publish_post unpublish_post delete_post]
   before_action :authenticate_user!
   skip_before_action :authenticate_user!, only: :show
 
   def show
-    @categories = PostCategory.where(post_id: @post.id)
-    @post_categories = Category.where(id: @categories[0].category_id)
+    @categories = Category.where(post_id: @post.id)
     @markers = @post.addresses.geocoded.map do |a|
       {
         lat: a.latitude,
@@ -33,16 +32,6 @@ class PostsController < ApplicationController
     end
   end
 
-  def destroy
-    @post.destroy
-
-    if @post.destroy
-      redirect_to dashboard_path, notice: "Your post was successfully deleted."
-    else
-      render :show
-    end
-  end
-
   def save_post
     current_user.favorite(@post)
     redirect_to post_path(@post), notice: "Post was saved."
@@ -65,6 +54,34 @@ class PostsController < ApplicationController
     redirect_to post_path(@post), notice: "Post was downvoted."
   end
 
+  def publish_post
+    if current_user.role == 1 && @post.pending == true
+      @post.pending = false
+      @post.save
+      redirect_to post_path(@post), notice: "Post was published."
+    else
+      redirect_to home_path
+    end
+  end
+
+  def unpublish_post
+    if current_user.role == 1 && @post.pending == false
+      @post.pending = true
+      @post.save
+      redirect_to post_path(@post), notice: "Post was unpublished."
+    else
+      redirect_to home_path
+    end
+  end
+
+  def delete_post
+    if current_user.role == 1
+      destroy
+    else
+      redirect_to post_path(@post), notice: "You don't have the permissions to perform this action."
+    end
+  end
+
   private
 
   def find_post
@@ -81,6 +98,16 @@ class PostsController < ApplicationController
       redirect_to home_path
     else
       @post = Post.where(id: params[:id], pending: false)
+    end
+  end
+
+  def destroy
+    @post.destroy
+
+    if @post.destroy
+      redirect_to dashboard_path, notice: "This post was successfully deleted."
+    else
+      render :show, notice: "Error while deleting post!"
     end
   end
 

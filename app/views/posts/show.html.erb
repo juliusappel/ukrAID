@@ -3,7 +3,7 @@
 <% end %>
 <% content_for :meta_title, "#{@post.title} on #{DEFAULT_META["meta_product_name"]}" %>
 <% content_for :meta_description, @post.rich_content %>
-<% content_for :meta_image, cl_image_path(@post.photos.first.key) %>
+<% content_for :meta_image, cl_image_path(@post.photos.first.key) if @post.photos.attached? %>
 
 
 <div class="post">
@@ -30,7 +30,7 @@
   <% end %>
   <br>
 
-
+  <!-- Contact buttons -->
   <div class="contact-details">
     <% if @post.phone_number.present? %>
       <%= phone_to @post.phone_number, class: "btn-cta-call" do %>
@@ -63,6 +63,8 @@
   <% end %>
 
   <% if user_signed_in? %>
+    <br>
+    <hr>
     <br>
     <!-- Save / Unsave this post to dashboard -->
     <% if current_user.favorited?(@post) %>
@@ -110,9 +112,23 @@
     <!-- Admin actions -->
     <% if current_user.role == 1 %>
       <br>
+      <hr>
+      <br>
       <div class="admin-action">
         <!-- Publish post -->
+        <% if @post.pending == true %>
+          <%= link_to publish_post_path, data: { confirm: "Are you sure?" }, method: :post, class: "btn publish-btn" do %>
+            <i class="fas fa-upload"></i> Publish Post
+          <% end %>
+        <% else %>
+          <%= link_to unpublish_post_path, data: { confirm: "Are you sure?" }, method: :post, class: "btn unpublish-btn" do %>
+            <i class="fas fa-ban"></i> Unpublish Post
+          <% end %>
+        <% end %>
         <!-- Delete post -->
+        <%= link_to delete_post_path, data: { confirm: "Are you sure?" }, method: :post, class: "btn btn-danger delete-btn" do %>
+          <i class="fas fa-trash"></i> Delete Post
+        <% end %>
       </div>
     <% end %>
   <% end %>

@@ -1,7 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to home_path, class: "navbar-brand" do %>
-      <%= image_tag "logo_sm.webp" %>
+    <%= link_to home_path, class: "navbar-brand", label: "feed" do %>
+      <%= image_tag "logo_sm.webp", alt: "Logo ukrAID" %>
     <% end %>
 
     <div class="category-dropdown">
@@ -11,6 +11,22 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
+    <div class="search-box" data-search-target="searchbar">
+      <%= form_tag home_path, method: :get do %>
+        <div class="search-input">
+          <%= text_field_tag :query,
+            params[:query],
+            class: "search-txt form-control",
+            placeholder: "Search Posts",
+            data: { search_target: "input" }
+          %>
+          <%= button_tag type: "submit", class: "btn btn-primary search-btn-bar" do %>
+            <i class="fa-solid fa-magnifying-glass"></i>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
@@ -25,10 +41,13 @@
             <%= link_to "Dashboard", dashboard_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Available Categories", all_categories_path, class: "nav-link" %>
+            <%= link_to "All Categories", all_categories_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to "About", "#", class: "nav-link" %>
+          </li>
+          <li class="nav-item">
+            <%= link_to "Edit Profile", edit_user_registration_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link" %>
@@ -64,22 +83,6 @@
           </li>
         <% end %>
       </ul>
-    </div>
-
-    <div class="search-box" data-search-target="searchbar">
-      <%= form_tag home_path, method: :get do %>
-        <div class="search-input">
-          <%= text_field_tag :query,
-            params[:query],
-            class: "search-txt form-control",
-            placeholder: "Search Posts",
-            data: { search_target: "input" }
-          %>
-          <%= button_tag type: "submit", class: "btn btn-primary search-btn" do %>
-            <i class="fa-solid fa-magnifying-glass"></i>
-          <% end %>
-        </div>
-      <% end %>
     </div>
   </div>
 </div>
