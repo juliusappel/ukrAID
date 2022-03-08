@@ -12,6 +12,22 @@
       <span class="navbar-toggler-icon"></span>
     </button>
 
+    <div class="search-box" data-search-target="searchbar">
+      <%= form_tag home_path, method: :get do %>
+        <div class="search-input">
+          <%= text_field_tag :query,
+            params[:query],
+            class: "search-txt form-control",
+            placeholder: "Search Posts",
+            data: { search_target: "input" }
+          %>
+          <%= button_tag type: "submit", class: "btn btn-primary search-btn-bar" do %>
+            <i class="fa-solid fa-magnifying-glass"></i>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
@@ -64,22 +80,6 @@
           </li>
         <% end %>
       </ul>
-    </div>
-
-    <div class="search-box" data-search-target="searchbar">
-      <%= form_tag home_path, method: :get do %>
-        <div class="search-input">
-          <%= text_field_tag :query,
-            params[:query],
-            class: "search-txt form-control",
-            placeholder: "Search Posts",
-            data: { search_target: "input" }
-          %>
-          <%= button_tag type: "submit", class: "btn btn-primary search-btn" do %>
-            <i class="fa-solid fa-magnifying-glass"></i>
-          <% end %>
-        </div>
-      <% end %>
     </div>
   </div>
 </div>
