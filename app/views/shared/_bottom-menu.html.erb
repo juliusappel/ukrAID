@@ -1,14 +1,36 @@
-<div class="bottom-menu">
-  <%= link_to home_path, class: 'active' do %>
-    <i class="fa-solid fa-house"></i>
+<div class="bottom-menu" data-controller="menu" data-menu-target="buttonContainer">
+
+  <% if current_page?(home_path) %>
+    <%= link_to home_path, class: 'menu-active', data: { menu_target: 'button' }  do %>
+      <i class="fa-solid fa-house"></i><p>Feed</p>
+    <% end %>
+  <% else %>
+    <%= link_to home_path, data: { menu_target: 'button' }  do %>
+      <i class="fa-solid fa-house"></i><p>Feed</p>
+    <% end %>
   <% end %>
-  <%= link_to new_post_path do %>
-    <i class="fas fa-plus-circle"></i>
+
+  <% if current_page?(new_post_path) %>
+    <%= link_to new_post_path, class: 'menu-active', data: { menu_target: 'button' } do %>
+      <i class="fas fa-plus-square"></i><p>New post</p>
+    <% end %>
+  <% else %>
+    <%= link_to new_post_path, data: { menu_target: 'button' } do %>
+      <i class="fas fa-plus-square"></i><p>New post</p>
+    <% end %>
   <% end %>
-  <%= link_to dashboard_path do %>
-    <i class="fa-solid fa-user"></i>
-  <% end %>
-  <a class="search-btn" href="#">
-    <i data-action="click->search#expand" class="fa-solid fa-magnifying-glass"></i>
+
+  <a href="#" data-menu-target="button" data-action="click->menu#active">
+    <i data-action="click->search#expand" class="fa-solid fa-magnifying-glass"></i><p>Search</p>
   </a>
+
+  <% if current_page?(dashboard_path) %>
+    <%= link_to dashboard_path, class: 'menu-active', data: { menu_target: 'button' } do %>
+      <i class="fa-solid fa-user"></i><p>Account</p>
+    <% end %>
+  <% else %>
+    <%= link_to dashboard_path, data: { menu_target: 'button' } do %>
+      <i class="fa-solid fa-user"></i><p>Account</p>
+    <% end %>
+  <% end %>
 </div>

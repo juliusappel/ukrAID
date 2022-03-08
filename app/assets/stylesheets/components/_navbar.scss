@@ -69,6 +69,7 @@
   margin-bottom: 2%;
   color: white;
   float: right;
+  margin-right: 10px;
   width: 20px;
   height: 30px;
   border: none;
@@ -138,12 +139,19 @@
   position: fixed;
   bottom: 0;
   width: 100%;
+
+  p {
+    margin: 0;
+    margin-bottom: 0.5rem;
+    font-size: 12px;
+  }
 }
 
 /* Style the links inside the navigation bar */
 .bottom-menu a {
   float: left;
   display: block;
+  width: 25%;
   color: #f2f2f2;
   text-align: center;
   padding: 14px 16px;
@@ -154,12 +162,12 @@
 
 /* Change the color of links on hover */
 .bottom-menu a:hover {
-  background-color: $ukr_blue;
-  color: black;
+  background-color: $mainblue;
+  color: white;
 }
 
 /* Add a color to the active/current link */
-.bottom-menu a.active {
+.menu-active {
   background-color: $mainblue;
   color: white;
 }
