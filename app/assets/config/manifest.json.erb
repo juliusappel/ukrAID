@@ -1,0 +1,17 @@
+{
+ "background_color": "white",
+ "description": "ukrAID utilizes user-aggregated data on aid services for Ukrainian refugees and provides them on a single easy-to-use & searchable page. In addition, ukrAID offers a collection of tips and tricks on how people from all over the world can help.",
+ "display": "fullscreen",
+ "name": "ukrAID",
+ "icons": [
+  <% files = Dir.entries(Rails.root.join("app/assets/images/icons/")).select {|f| !File.directory? f} %>
+  <% files.each_with_index do |file, index| %>
+    <% match = file.match(/.+-(?<size>\d{2,3}x\d{2,3}).png/) %>
+    {
+      "src": "<%= image_path "icons/#{file}" %>",
+      "sizes": "<%= match && match[:size] %>",
+      "type": "image/png"
+    }<%= "," unless (files.size - 1) == index %>
+  <% end %>
+  ]
+}

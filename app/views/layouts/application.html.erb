@@ -19,26 +19,30 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <script src="https://kit.fontawesome.com/a46b757c55.js" crossorigin="anonymous"></script>
-
+    <%= render 'shared/ios_pwa_links' %>
+    <link rel="manifest" href="<%= asset_path 'manifest.json' %>">
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
-    <%= favicon_link_tag asset_path('logo_favicon.png') %>
   </head>
 
   <body>
     <div class="wrapper" data-controller="search" data-search-target="body">
+
       <!-- NAVBAR !-->
       <% unless action_name == 'welcome' %>
         <%= render 'shared/navbar' %>
       <% end %>
+
       <!-- CONTENT !-->
       <div class="content">
         <%= render 'shared/flashes' %>
         <%= yield %>
       </div>
+
       <!-- BOTTOM-MENU !-->
       <% unless action_name == 'welcome' %>
         <%= render 'shared/bottom-menu' %>
