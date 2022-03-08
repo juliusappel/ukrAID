@@ -32,7 +32,7 @@ class PagesController < ApplicationController
     @my_posts = Post.where(user_id: current_user.id)
     @my_published_posts = Post.where(user_id: current_user.id, pending: false)
     @my_pending_posts = Post.where(user_id: current_user.id, pending: true)
-    @pending_posts = Post.where(pending: true) unless current_user.role.zero?
+    @pending_posts = Post.where(pending: true).sort { |a,b| a.created_at <=> b.created_at } unless current_user.role.zero?
     @saved_posts = current_user.all_favorited
   end
 end
