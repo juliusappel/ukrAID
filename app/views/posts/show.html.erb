@@ -84,7 +84,7 @@
         <% end %>
       <% when true %>
         <!-- Upvote (Active => no button / different design) -->
-        <div class="upvote-btn-blurred"><i class="fas fa-arrow-alt-circle-up"></i> Upvote</div>
+        <div class="upvote-btn-blurred"><i class="fas fa-arrow-alt-circle-up"></i> Upvoted</div>
         <div id="vote_score"><%= @post.cached_weighted_score %></div>
         <%= link_to downvote_post_post_path, method: :post, class: "downvote-btn" do %>
           Downvote <i class="fas fa-arrow-alt-circle-down"></i>
@@ -95,7 +95,7 @@
         <% end %>
         <div id="vote_score"><%= @post.cached_weighted_score %></div>
         <!-- Downvote (Active => no button / different design) -->
-        <div class="downvote-btn-blurred">Downvote <i class="fas fa-arrow-alt-circle-down"></i></div>
+        <div class="downvote-btn-blurred">Downvoted <i class="fas fa-arrow-alt-circle-down"></i></div>
       <% end %>
     </div>
 
