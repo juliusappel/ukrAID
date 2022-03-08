@@ -75,15 +75,17 @@
 }
 
 .navbar-collapse {
-  background-color: white;
-  display: flex;
-  justify-content: center;
+  background-color: $mainblue;
+  width: 100%;
+  padding-right: 2rem;
 }
 
-.navbarSupportedContent {
-  background-color: white;
-  display: flex;
-  justify-content: center;
+#navbarSupportedContent {
+  margin-left: -1rem;
+  margin-right: -4rem;
+  padding-right: 2rem;
+  padding: 2rem;
+  width: 50%;
 }
 
 .navbar-toggler {
