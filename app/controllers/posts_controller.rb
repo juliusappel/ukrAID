@@ -89,15 +89,15 @@ class PostsController < ApplicationController
     if user_signed_in?
       if current_user.role == 1
         @post = Post.find(params[:id])
+      elsif @post.user_id == current_user.id
+        @post = Post.find(params[:id])
       elsif @post.pending == true && current_user.role != 1
         redirect_to home_path
-      else
-        @post = Post.where(id: params[:id], pending: false)
       end
-    elsif @post.pending == true
-      redirect_to home_path
+    elsif @post.pending == false
+      @post = Post.find(params[:id])
     else
-      @post = Post.where(id: params[:id], pending: false)
+      redirect_to home_path
     end
   end
 
