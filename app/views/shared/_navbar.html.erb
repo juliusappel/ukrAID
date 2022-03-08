@@ -19,19 +19,19 @@
             <%= link_to "Feed", home_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Add Post", "#", class: "nav-link" %>
+            <%= link_to "Add Post", new_post_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Dashboard", "#", class: "nav-link" %>
+            <%= link_to "Dashboard", dashboard_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Available Categories", "#", class: "nav-link" %>
+            <%= link_to "Available Categories", all_categories_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
             <%= link_to "About", "#", class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Logout", "#", class: "nav-link" %>
+            <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "nav-link" %>
           </li>
 
           <!-- <li class="nav-item dropdown">
@@ -51,16 +51,16 @@
             <%= link_to "Feed", home_path, class: "nav-link" %>
           </li>
           <li class="nav-item active">
-            <%= link_to "All Categories", home_path, class: "nav-link" %>
+            <%= link_to "All Categories", all_categories_path, class: "nav-link" %>
           </li>
           <li class="nav-item active">
             <%= link_to "About", home_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Register", "#", class: "nav-link" %>
+            <%= link_to "Register", new_user_registration_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Login", "#", class: "nav-link" %>
+            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
           </li>
         <% end %>
       </ul>
