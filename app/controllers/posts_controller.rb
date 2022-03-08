@@ -4,8 +4,7 @@ class PostsController < ApplicationController
   skip_before_action :authenticate_user!, only: :show
 
   def show
-    @categories = PostCategory.where(post_id: @post.id)
-    @post_categories = Category.where(id: @categories[0].category_id)
+    @categories = Category.where(post_id: @post.id)
     @markers = @post.addresses.geocoded.map do |a|
       {
         lat: a.latitude,
