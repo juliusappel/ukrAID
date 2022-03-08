@@ -6,12 +6,15 @@ Rails.application.routes.draw do
 
   resources :categories, only: %i[show]
 
-  resources :posts, only: %i[show new create destroy] do
+  resources :posts, only: %i[show new create] do
     member do
       post 'save_post', to: "posts#save_post"
       post 'unsave_post', to: "posts#unsave_post"
       post 'upvote_post', to: "posts#upvote_post"
       post 'downvote_post', to: "posts#downvote_post"
+      post 'publish', to: "posts#publish_post"
+      post 'unpublish', to: "posts#unpublish_post"
+      post 'delete', to: "posts#delete_post"
     end
   end
 
