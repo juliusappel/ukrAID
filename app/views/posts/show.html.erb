@@ -4,7 +4,7 @@
 
   <div class="icons">
     <div class="upvotes">
-      <%= @post.cached_weighted_score %>
+      <i class="fas fa-arrow-alt-circle-up"></i> <%= @post.cached_weighted_score %>
     </div>
     <% if @post.categories.present? %>
       <% @post.categories.each do |cat| %>
@@ -26,7 +26,7 @@
   <div class="contact-details">
     <% if @post.phone_number.present? %>
       <%= phone_to @post.phone_number, class: "btn-cta-call" do %>
-        <i class="fas fa-phone-alt"></i> Call
+        <i class="fas fa-phone"></i> Call
       <% end %>
     <% end %>
 
