@@ -1,12 +1,8 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <div class="container-fluid">
-    <%= link_to home_path, class: "navbar-brand" do %>
-      <%= image_tag "logo_favicon.png" %>
+    <%= link_to "home_path", class: "navbar-brand" do %>
+      <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
     <% end %>
-
-    <div class="category-dropdown">
-      <span>Україна</span>
-    </div>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -14,59 +10,34 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
-        <% if user_signed_in? %>
+        <%# if user_signed_in? %>
           <li class="nav-item active">
-            <%= link_to "Feed", home_path, class: "nav-link" %>
+            <%= link_to "Home", "#", class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <%= link_to "Add Post", "#", class: "nav-link" %>
+            <%= link_to "Messages", "#", class: "nav-link" %>
           </li>
-          <li class="nav-item">
-            <%= link_to "Dashboard", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Available Categories", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "About", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Logout", "#", class: "nav-link" %>
-          </li>
-
-          <!-- <li class="nav-item dropdown">
+          <li class="nav-item dropdown">
             <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Dashboard", "#", class: "dropdown-item" %>
-              <%= link_to "Login", "#", class: "dropdown-item" %>
-              <%= link_to "Logout", "#", class: "dropdown-item" %>
+              <%= link_to "Action", "#", class: "dropdown-item" %>
+              <%= link_to "Another action", "#", class: "dropdown-item" %>
               <%#= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
             </div>
-          </li> -->
-        <% else %>
+          </li>
+        <%# else %>
           <!--li class="nav-item"-->
             <%#= link_to "Login", new_user_session_path, class: "nav-link" %>
           <!--/li-->
-          <li class="nav-item active">
-            <%= link_to "Feed", home_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item active">
-            <%= link_to "All Categories", home_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item active">
-            <%= link_to "About", home_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Register", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Login", "#", class: "nav-link" %>
-          </li>
-        <% end %>
+        <%# end %>
       </ul>
     </div>
 
     <div class="search-box" data-search-target="searchbar">
+      <%# <input class="search-txt form-control" type="text" name="query" placeholder="Type to Search" data-search-target="input">
+      <a class="search-btn" href="#">
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </a> %>
       <%= form_tag home_path, method: :get do %>
         <div class="search-input">
           <%= text_field_tag :query,
@@ -81,5 +52,6 @@
         </div>
       <% end %>
     </div>
+
   </div>
 </div>
