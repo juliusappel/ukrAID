@@ -15,11 +15,12 @@
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
-  margin-left: 1rem;
+  margin-left: 1.75rem;
+
 }
 
 .search-box {
-  width: 240px;
+  width: 215px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -32,14 +33,14 @@
   padding-right: 0;
 }
 
-.search-input {
+.search-box-active {
+  transform: translate(95px, -49px) !important;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.search-box-active {
-  transform: translate(77px, -49px) !important;
+.search-input {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -74,8 +75,36 @@
   transition: 0.4s;
 }
 
+.navbar-collapse {
+  background-color: $mainblue;
+  width: 100%;
+  padding-right: 2rem;
+
+  .show {
+    .search-box-active {
+      transform: translate(95px, 352px) !important;
+    }
+  }
+}
+
+#navbarSupportedContent {
+  padding-right: 2rem;
+  padding: 2rem;
+
+  a {
+    color: white;
+    border-bottom: 0.5px solid white;
+  }
+}
+
+.navbar .container-fluid {
+  padding-left: 0;
+  padding-right: 0;
+}
+
 .navbar-toggler {
   margin-right: 1rem;
+  border: none;
 }
 
 .category-dropdown {
