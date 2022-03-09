@@ -1,6 +1,8 @@
 .alert {
   position: fixed;
-  bottom: 16px;
-  right: 16px;
+  bottom: 6rem;
+  right: 0.5rem;
+  width: 94%;
   z-index: 1000;
+  background-color: $ukr_yellow;
 }
