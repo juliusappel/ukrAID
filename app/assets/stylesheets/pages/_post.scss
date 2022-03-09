@@ -105,3 +105,17 @@
   background-color: white;
   color: $navy;
 }
+
+.new-user-notice {
+  text-align: center;
+}
+
+.new-user-notice a {
+  color: $ukr_yellow;
+  font-weight: 700;
+}
+
+.new-user-notice a:hover {
+  color: $ukr_yellow;
+  font-weight: 900;
+}
