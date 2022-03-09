@@ -20,6 +20,7 @@ Rails.application.routes.draw do
 
   get :dashboard, to: 'pages#dashboard'
   get :all_categories, to: 'categories#all'
+  get :about, to: 'pages#about'
 
   resources :posts, only: %i[new create] do
     resources :addresses, only: %i[new create]
