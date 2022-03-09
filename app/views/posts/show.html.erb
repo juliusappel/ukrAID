@@ -64,8 +64,6 @@
 
   <% if user_signed_in? %>
     <br>
-    <hr>
-    <br>
     <!-- Save / Unsave this post to dashboard -->
     <% if current_user.favorited?(@post) %>
       <%= link_to unsave_post_post_path, method: :post, class: "unsave-btn" do %>
@@ -77,9 +75,7 @@
       <% end %>
     <% end %>
 
-    <br>
     <hr>
-    <br>
 
     <!-- Vote functionality -->
     <div class="voting">
@@ -111,22 +107,19 @@
 
     <!-- Admin actions -->
     <% if current_user.role == 1 %>
-      <br>
-      <hr>
-      <br>
       <div class="admin-action">
         <!-- Publish post -->
         <% if @post.pending == true %>
-          <%= link_to publish_post_path, data: { confirm: "Are you sure?" }, method: :post, class: "btn publish-btn" do %>
+          <%= link_to publish_post_path, data: { confirm: "Are you sure?" }, method: :post, class: "admin-btn" do %>
             <i class="fas fa-upload"></i> Publish Post
           <% end %>
         <% else %>
-          <%= link_to unpublish_post_path, data: { confirm: "Are you sure?" }, method: :post, class: "btn unpublish-btn" do %>
+          <%= link_to unpublish_post_path, data: { confirm: "Are you sure?" }, method: :post, class: "admin-btn" do %>
             <i class="fas fa-ban"></i> Unpublish Post
           <% end %>
         <% end %>
         <!-- Delete post -->
-        <%= link_to delete_post_path, data: { confirm: "Are you sure?" }, method: :post, class: "btn btn-danger delete-btn" do %>
+        <%= link_to delete_post_path, data: { confirm: "Are you sure?" }, method: :post, class: "admin-btn" do %>
           <i class="fas fa-trash"></i> Delete Post
         <% end %>
       </div>
