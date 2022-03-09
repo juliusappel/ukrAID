@@ -21,29 +21,36 @@
     <label for="my_checkbox" class="save-btn">Show / Hide categories</label>
   <hr>
   <h1>For everyone</h1>
-  <ul class="category-list">
-    <% @both_categories.each do |c| %>
-      <%= link_to category_path(c) do %>
-        <li><div class="category">
-        <h4><%= c.name %></h4>
-        <p class="amout_of_posts"><%= c.posts.where(pending: false).length %></p>
-        </div>
-        </li>
-      <% end %>
-    <% end %>
-  </ul>
-  <br>
+  <input type="checkbox" id="my_checkbox2" style="display:none;">
+    <div id="hidden">
+      <ul class="category-list">
+        <% @both_categories.each do |c| %>
+          <%= link_to category_path(c) do %>
+            <li><div class="category">
+            <h4><%= c.name %></h4>
+            <p class="amout_of_posts"><%= c.posts.where(pending: false).length %></p>
+            </div>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+  <label for="my_checkbox2" class="save-btn">Show / Hide categories</label>
   <hr>
   <h1>Rest of the world</h1>
-  <ul class="category-list">
-    <% @world_categories.each do |c| %>
-      <%= link_to category_path(c) do %>
-        <li><div class="category">
-        <h4><%= c.name %></h4>
-        <p class="amout_of_posts"><%= c.posts.where(pending: false).length %></p>
-        </div>
-        </li>
-      <% end %>
-    <% end %>
-  </ul>
+  <input type="checkbox" id="my_checkbox3" style="display:none;">
+    <div id="hidden">
+      <ul class="category-list">
+        <% @world_categories.each do |c| %>
+          <%= link_to category_path(c) do %>
+            <li><div class="category">
+            <h4><%= c.name %></h4>
+            <p class="amout_of_posts"><%= c.posts.where(pending: false).length %></p>
+            </div>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+  <label for="my_checkbox3" class="save-btn">Show / Hide categories</label>
 </div>
