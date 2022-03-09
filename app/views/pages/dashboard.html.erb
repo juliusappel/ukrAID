@@ -9,9 +9,11 @@
       <p id="hi-user">Hi <%= current_user.username %> <sup><span><i class="fas fa-edit"></i></span></sup></p>
     <% end %>
   <br>
-  <p>Find your pending, saved and published posts:</p>
+  <p>Find your published, pending and saved posts:</p>
   <div class="dash-buttons">
-    <%= link_to 'Pending', dashboard_path(anchor: 'pending'), class: 'btn-cta' %>
+    <% if current_user.role == 1 %>
+      <%= link_to 'Pending', dashboard_path(anchor: 'pending'), class: 'btn-cta' %>
+    <% end %>
     <%= link_to 'Saved', dashboard_path(anchor: 'saved'), class: 'btn-cta' %>
     <%= link_to 'Published', dashboard_path(anchor: 'published'), class: 'btn-cta' %>
   </div>
