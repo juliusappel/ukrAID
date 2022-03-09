@@ -1,18 +1,59 @@
 .dashboard-head {
+  position: relative;
   background-color: $navy;
   padding: 1rem;
   color: white;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0 0 15px 15px;
+
+  .userinfo {
+    display: flex;
+    text-decoration: none;
+  }
+
+  #hi-user {
+    color: white;
+    font-size: 20px;
+  }
+
+  span {
+    color: $ukr_yellow;
+    font-size: 16px;
+  }
 
   h1 {
     color: white;
     font-weight: bolder;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.3rem;
+  }
+
+  h4 {
+    font-size: 20px;
   }
 
   p {
     color: lightgray;
   }
+
+  .badge-admin {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 2px 8px;
+    font-size: 12px;
+    border-radius: 10px;
+    background-color: $ukr_yellow;
+    color: $navy;
+  }
+
+  .badge-user {
+    position: absolute;
+  }
 }
+
+
 
 .dash-buttons {
   margin-bottom: 0.5rem;
@@ -38,6 +79,13 @@
   h2 {
     color: white;
     font-weight: bolder;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 0.5rem;
+  }
+
+  h5 {
+    color: white;
     margin-top: 1rem;
     margin-bottom: 1rem;
     margin-left: 0.5rem;
