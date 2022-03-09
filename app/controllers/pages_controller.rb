@@ -1,8 +1,10 @@
 class PagesController < ApplicationController
   before_action :authenticate_user!
-  skip_before_action :authenticate_user!, only: %i[home welcome]
+  skip_before_action :authenticate_user!, only: %i[home welcome about]
 
   def welcome; end
+
+  def about; end
 
   def home
     @categories = Category.all
