@@ -22,21 +22,26 @@
       <%= f.rich_text_area :rich_content,
                           required: true,
                           label: 'Post Content' %>
-      <%= f.input :phone_number,
-                  as: :tel,
-                  input_html: { type: 'tel' },
-                  placeholder: '00 380 9202 2 2 22',
-                  label: 'Add a contact phone number (Optional)' %>
-      <%= f.input :email,
-                  as: :email,
-                  input_html: { type: 'email' },
-                  placeholder: 'someone@gmail.com',
-                  label: 'Add a contact email address (Optional)' %>
-      <%= f.input :website,
-                  as: :url,
-                  input_html: { type: 'url' },
-                  placeholder: 'www.ukraid.com',
-                  label: 'Add a corresponding website (Optional)' %>
+      <br>
+      <input type="checkbox" id="my_checkbox" style="display:none;">
+        <div id="hidden">
+          <%= f.input :phone_number,
+                      as: :tel,
+                      input_html: { type: 'tel' },
+                      placeholder: '00 380 9202 2 2 22',
+                      label: 'Add a contact phone number (Optional)' %>
+          <%= f.input :email,
+                      as: :email,
+                      input_html: { type: 'email' },
+                      placeholder: 'someone@gmail.com',
+                      label: 'Add a contact email address (Optional)' %>
+          <%= f.input :website,
+                      as: :url,
+                      input_html: { type: 'url' },
+                      placeholder: 'https://www.ukraid.com',
+                      label: 'Add a corresponding website (Optional)' %>
+        </div>
+        <label for="my_checkbox" class="save-btn">Add contact details</label>
     </div>
     <br>
     <div class="form-actions">

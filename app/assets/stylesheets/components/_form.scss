@@ -25,3 +25,11 @@
   border: 1px solid lightgrey;
   box-shadow: none;
 }
+
+#hidden {
+  display: none;
+  height: auto;
+}
+:checked + #hidden {
+  display: block;
+}
