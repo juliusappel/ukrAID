@@ -8,6 +8,21 @@
   margin-bottom: 0.5rem;
   border-radius: 0 0 15px 15px;
 
+  .userinfo {
+    display: flex;
+    text-decoration: none;
+  }
+
+  #hi-user {
+    color: white;
+    font-size: 20px;
+  }
+
+  span {
+    color: $ukr_yellow;
+    font-size: 16px;
+  }
+
   h1 {
     color: white;
     font-weight: bolder;

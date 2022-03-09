@@ -5,7 +5,9 @@
 
 <div class="dashboard-head">
   <h1>Dashboard</h1>
-  <h4>Hi <%= current_user.username %>!</h4>
+    <%= link_to edit_user_registration_path(current_user), class: "userinfo" do %>
+      <p id="hi-user">Hi <%= current_user.username %> <sup><span><i class="fas fa-edit"></i></span></sup></p>
+    <% end %>
   <br>
   <p>Find your pending, saved and published posts:</p>
   <div class="dash-buttons">
