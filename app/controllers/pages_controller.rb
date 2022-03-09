@@ -15,12 +15,12 @@ class PagesController < ApplicationController
         @categories = Category.where(target_group: 0) + Category.where(target_group: 1)
         @posts = []
         @published_posts.each { |p| @posts.push(p) if p.categories.any? { |c| c.target_group <= 1 } }
-        @posts.sort { |a,b| b.sorting_score <=> a.sorting_score }
+        @posts = @posts.sort { |a,b| b.sorting_score <=> a.sorting_score }
       when "world"
         @categories = Category.where(target_group: 0) + Category.where(target_group: 2)
         @posts = []
         @published_posts.each { |p| @posts.push(p) if p.categories.any? { |c| c.target_group != 1 } }
-        @posts.sort { |a,b| b.sorting_score <=> a.sorting_score }
+        @posts = @posts.sort { |a,b| b.sorting_score <=> a.sorting_score }
       else
         @categories = Category.all
         @posts = @published_posts.sort { |a,b| b.sorting_score <=> a.sorting_score }
