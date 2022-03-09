@@ -13,6 +13,9 @@
     <%= link_to 'Saved', dashboard_path(anchor: 'saved'), class: 'btn-cta' %>
     <%= link_to 'Published', dashboard_path(anchor: 'published'), class: 'btn-cta' %>
   </div>
+  <% if current_user.role == 1 %>
+    <div class="badge-admin">Admin</div>
+  <% end %>
 </div>
 
 <div class="dashboard">
@@ -32,7 +35,7 @@
   <hr>
 
   <div class="dashboard-card">
-    <h2 id="saved">Your saved posts (<%= @saved_posts.length unless @saved_posts.nil? %>)</h2>
+    <h2 id="saved">Saved posts (<%= @saved_posts.length unless @saved_posts.nil? %>)</h2>
     <% if @saved_posts.any? %>
       <% @posts = @saved_posts %>
       <%= render 'shared/cards' %>
@@ -44,16 +47,16 @@
   <hr>
 
   <div class="dashboard-card">
-    <h2 id="published">Your posts (<%= @my_posts.length unless @my_posts.nil? %>)</h2>
+    <h2 id="published">Posts (<%= @my_posts.length unless @my_posts.nil? %>)</h2>
     <% if @my_posts.any? %>
 
-      <h5>Your published posts (<%= @my_published_posts.length unless @my_published_posts.nil?%>)</h5>
+      <h5>Published (<%= @my_published_posts.length unless @my_published_posts.nil?%>)</h5>
       <% if @my_published_posts.any? %>
         <% @posts = @my_published_posts %>
         <%= render 'shared/cards' %>
       <% end %>
 
-      <h5>Your pending posts (<%= @my_pending_posts.length unless @my_pending_posts.nil? %>)</h5>
+      <h5>Pending (<%= @my_pending_posts.length unless @my_pending_posts.nil? %>)</h5>
       <% if @my_pending_posts.any? %>
         <% @posts = @my_pending_posts %>
         <%= render 'shared/cards' %>
