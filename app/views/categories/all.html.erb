@@ -4,18 +4,21 @@
 
 <div class="all-categories">
   <h1>Ukraine / Україна</h1>
-  <ul class="category-list">
-    <% @ua_categories.each do |c| %>
-      <%= link_to category_path(c) do %>
-        <li><div class="category-wrap">
-        <h4><%= c.name %></h4>
-        <p class="amout_of_posts"><%= c.posts.where(pending: false).length %></p>
-        </div>
-        </li>
-      <% end %>
-    <% end %>
-  </ul>
-  <br>
+  <input type="checkbox" id="my_checkbox" style="display:none;">
+    <div id="hidden">
+      <ul class="category-list">
+        <% @ua_categories.each do |c| %>
+          <%= link_to category_path(c) do %>
+            <li><div class="category-wrap">
+            <h4><%= c.name %></h4>
+            <p class="amout_of_posts"><%= c.posts.where(pending: false).length %></p>
+            </div>
+            </li>
+          <% end %>
+        <% end %>
+      </ul>
+    </div>
+    <label for="my_checkbox" class="save-btn">Show / Hide categories</label>
   <hr>
   <h1>For everyone</h1>
   <ul class="category-list">

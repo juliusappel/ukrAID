@@ -77,3 +77,11 @@
     font-size: 16px;
   }
 }
+
+#hidden-cat {
+  display: none;
+  height: auto;
+}
+:checked + #hidden {
+  display: block;
+}

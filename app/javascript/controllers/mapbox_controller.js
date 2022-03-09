@@ -45,7 +45,7 @@ export default class extends Controller {
   }
 
   #centerMap() {
-    map.on('click', 'circle', (e) => {
+    map.on('click', 'mapboxgl-marker', (e) => {
       map.flyTo({
       center: e.features[0].geometry.coordinates
       });
