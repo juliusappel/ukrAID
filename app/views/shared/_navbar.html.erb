@@ -4,13 +4,25 @@
       <%= image_tag "logo_sm.webp", alt: "Logo ukrAID" %>
     <% end %>
 
-    <div class="category-dropdown">
-      <span>Ukraine</span>
+    <div class="dropdown">
+      <% if params[:location] == "ukraine" %>
+        <button class="dropbtn">Ukraine  <i class="fas fa-chevron-down"></i></button>
+        <div class="dropdown-content">
+          <a href="/home?location=world">World</a>
+        </div>
+      <% else %>
+        <button class="dropbtn">World  <i class="fas fa-chevron-down"></i></button>
+        <div class="dropdown-content">
+          <a href="/home?location=ukraine">Ukraine</a>
+        </div>
+      <% end %>
     </div>
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
+
 
     <div class="search-box" data-search-target="searchbar">
       <%= form_tag home_path, method: :get do %>
