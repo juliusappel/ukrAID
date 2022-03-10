@@ -3,7 +3,7 @@
 <% end %>
 
 <div class="forms">
-  <h1>Do you want to add an address?</h1><h2>(Optional)</h2>
+  <h1>Do you want to add an address?</h1><h2>(optional)</h2>
   <br>
   <%= simple_form_for([@post, @address]) do |f| %>
     <%= f.error_notification %>
@@ -18,8 +18,8 @@
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, 'Add another address', class: "btn btn-primary" %>
-      <%= link_to 'Continue', new_post_post_category_path(@post), class: 'btn btn-secondary' %>
+      <%= f.button :submit, 'Add this address', class: "submit-btn" %>
+      <%= link_to 'Continue', new_post_post_category_path(@post), class: 'save-btn marge-bot' %>
     </div>
   <% end %>
 

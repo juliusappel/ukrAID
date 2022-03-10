@@ -1,5 +1,5 @@
 <% content_for :title do %>
-  My dashboard | ukrAID - Stand with Ukraine
+  Dashboard | ukrAID - Stand with Ukraine
 <% end %>
 
 
@@ -12,10 +12,16 @@
   <p>Find your published, pending and saved posts:</p>
   <div class="dash-buttons">
     <% if current_user.role == 1 %>
-      <%= link_to 'Pending', dashboard_path(anchor: 'pending'), class: 'btn-cta' %>
+      <%= link_to dashboard_path(anchor: 'pending'), class: 'admin-btn mari' do %>
+        <i class="far fa-hourglass-half"></i> Pending
+      <% end %>
     <% end %>
-    <%= link_to 'Saved', dashboard_path(anchor: 'saved'), class: 'btn-cta' %>
-    <%= link_to 'Published', dashboard_path(anchor: 'published'), class: 'btn-cta' %>
+    <%= link_to dashboard_path(anchor: 'saved'), class: 'admin-btn mari' do %>
+      <i class="fas fa-bookmark"></i> Saved
+    <% end %>
+    <%= link_to dashboard_path(anchor: 'published'), class: 'admin-btn mari' do %>
+      <i class="fas fa-upload"></i> Published
+    <% end %>
   </div>
   <% if current_user.role == 1 %>
     <div class="badge-admin">Admin</div>

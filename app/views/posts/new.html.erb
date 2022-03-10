@@ -13,12 +13,12 @@
                   placeholder: "Title",
                   minlength: 4,
                   maxlength: 60,
-                  label: 'Post Title (Required)' %>
+                  label: 'Title (required)' %>
       <%= f.input :photos,
                   as: :file,
                   input_html: { multiple: true },
-                  label: 'Add images to your post (Optional)' %>
-      <%= f.label 'Post Content (Required)'%>
+                  label: 'Add images to your post (optional)' %>
+      <%= f.label 'Content (required)'%>
       <%= f.rich_text_area :rich_content,
                           required: true,
                           label: 'Post Content' %>
@@ -41,11 +41,10 @@
                       placeholder: 'https://www.ukraid.com',
                       label: 'Add a corresponding website (Optional)' %>
         </div>
-        <label for="my_checkbox" class="save-btn">Add contact details</label>
+        <label for="my_checkbox" class="submit-btn">Add contact details</label>
     </div>
-    <br>
     <div class="form-actions">
-      <%= f.button :submit, 'Add an address', class: "btn btn-primary" %>
+      <%= f.button :submit, 'Continue', class: "save-btn marge-bot" %>
       <!-- add continue button to categories with submit function !-->
     </div>
   <% end %>
