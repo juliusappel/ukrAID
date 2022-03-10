@@ -26,7 +26,7 @@
       <ul class="category-list">
         <% @both_categories.each do |c| %>
           <%= link_to category_path(c) do %>
-            <li><div class="category">
+            <li><div class="category-wrap">
             <h4><%= c.name %></h4>
             <p class="amout_of_posts"><%= c.posts.where(pending: false).length %></p>
             </div>
@@ -43,7 +43,7 @@
       <ul class="category-list">
         <% @world_categories.each do |c| %>
           <%= link_to category_path(c) do %>
-            <li><div class="category">
+            <li><div class="category-wrap">
             <h4><%= c.name %></h4>
             <p class="amout_of_posts"><%= c.posts.where(pending: false).length %></p>
             </div>
