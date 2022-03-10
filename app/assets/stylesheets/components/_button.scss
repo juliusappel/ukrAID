@@ -92,3 +92,21 @@
 .mari {
   margin-right: 0.3rem;
 }
+
+.submit-btn {
+  display: block;
+  background-color: $navy;
+  padding: 1rem;
+  width: 100%;
+  border-radius: 10px;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  color: white;
+  font-weight: bolder;
+  margin-bottom: 2rem;
+}
+
+.marge-bot {
+  margin-bottom: 1rem;
+}
