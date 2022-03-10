@@ -13,42 +13,56 @@ puts "Start seeding database.."
 puts "Creating categories.."
 # Using top-level of administrative divisions of Ukraine (Source: https://en.wikipedia.org/wiki/Administrative_divisions_of_Ukraine#First-level_administrative_divisions)
 Category.destroy_all
-Category.create(name: "Ки́їв", target_group: 1) # Kyiv
-Category.create(name: "Севастополь", target_group: 1) # Sevastopol
-Category.create(name: "Автономна Республіка Крим", target_group: 1) # Autonomous Republic of Crimea
-Category.create(name: "Черка́ська о́бласть", target_group: 1) # Cherkasy Oblast
-Category.create(name: "Черні́гівська о́бласть", target_group: 1) # Chernihiv Oblast
-Category.create(name: "Черніве́цька о́бласть", target_group: 1) # Chernivtsi Oblast
-Category.create(name: "Дніпропетро́вська о́бласть", target_group: 1) # Dnipropetrovsk Oblast
-Category.create(name: "Доне́цька о́бласть", target_group: 1) # Donetsk Oblast
-Category.create(name: "Іва́но-Франкі́вська о́бласть", target_group: 1) # Ivano-Frankivsk Oblast
-Category.create(name: "Харківська́ о́бласть", target_group: 1) # Kharkiv Oblast
-Category.create(name: "Херсо́нська о́бласть", target_group: 1) # Kherson Oblast
-Category.create(name: "Хмельни́цька о́бласть", target_group: 1) # Khmelnytskyi Oblast
-Category.create(name: "Ки́ївська о́бласть", target_group: 1) # Kyiv Oblast
-Category.create(name: "Кіровогра́дська о́бласть", target_group: 1) # Kirovohrad Oblast
-Category.create(name: "Луга́нська о́бласть", target_group: 1) # Luhansk Oblast
-Category.create(name: "Льві́вська о́бласть", target_group: 1) # Lviv Oblast
-Category.create(name: "Микола́ївська о́бласть", target_group: 1) # Mykolaiv Oblast
-Category.create(name: "Оде́ська о́бласть", target_group: 1) # Odessa Oblast
-Category.create(name: "Полта́вська о́бласть", target_group: 1) # Poltava Oblast
-Category.create(name: "Рі́вненська о́бласть", target_group: 1) # Rivne Oblast
-Category.create(name: "Сумська́ о́бласть", target_group: 1) # Sumy Oblast
-Category.create(name: "Тернопі́льська о́бласть", target_group: 1) # Ternopil Oblast
-Category.create(name: "Ві́нницька о́бласть", target_group: 1) # Vinnytsia Oblast
-Category.create(name: "Воли́нська о́бласть", target_group: 1) # Volyn Oblast
-Category.create(name: "Закарпатська область", target_group: 1) # Zakarpattia Oblast
-Category.create(name: "Запорізька область", target_group: 1) # Zaporizhzhia Oblast
-Category.create(name: "Жито́мирська о́бласть", target_group: 1) # Zhytomyr Oblast
+Category.create(name: "Kyiv", target_group: 1) # Kyiv - Ки́їв
+Category.create(name: "Sevastopol", target_group: 1) # Sevastopol - Севастополь
+Category.create(name: "Autonomous Republic of Crimea", target_group: 1) # Autonomous Republic of Crimea - Автономна Республіка Крим
+Category.create(name: "Cherkasy Oblast", target_group: 1) # Cherkasy Oblast - Черка́ська о́бласть
+Category.create(name: "Chernihiv Oblast", target_group: 1) # Chernihiv Oblast - Черні́гівська о́бласть
+Category.create(name: "Chernivtsi Oblast", target_group: 1) # Chernivtsi Oblast - Черніве́цька о́бласть
+Category.create(name: "Dnipropetrovsk Oblast", target_group: 1) # Dnipropetrovsk Oblast - Дніпропетро́вська о́бласть
+Category.create(name: "Donetsk Oblast", target_group: 1) # Donetsk Oblast - Доне́цька о́бласть
+Category.create(name: "Ivano-Frankivsk Oblast", target_group: 1) # Ivano-Frankivsk Oblast - Іва́но-Франкі́вська о́бласть
+Category.create(name: "Kharkiv Oblast", target_group: 1) # Kharkiv Oblast - Харківська́ о́бласть
+Category.create(name: "Kherson Oblast", target_group: 1) # Kherson Oblast - Херсо́нська о́бласть
+Category.create(name: "Khmelnytskyi Oblast", target_group: 1) # Khmelnytskyi Oblast - Хмельни́цька о́бласть
+Category.create(name: "Kyiv Oblast", target_group: 1) # Kyiv Oblast - Ки́ївська о́бласть
+Category.create(name: "Kirovohrad Oblast", target_group: 1) # Kirovohrad Oblast - Кіровогра́дська о́бласть
+Category.create(name: "Luhansk Oblast", target_group: 1) # Luhansk Oblast - Луга́нська о́бласть
+Category.create(name: "Lviv Oblast", target_group: 1) # Lviv Oblast - Льві́вська о́бласть
+Category.create(name: "Mykolaiv Oblast", target_group: 1) # Mykolaiv Oblast - Микола́ївська о́бласть
+Category.create(name: "Odessa Oblast", target_group: 1) # Odessa Oblast - Оде́ська о́бласть
+Category.create(name: "Poltava Oblast", target_group: 1) # Poltava Oblast - Полта́вська о́бласть
+Category.create(name: "Rivne Oblast", target_group: 1) # Rivne Oblast - Рі́вненська о́бласть
+Category.create(name: "Sumy Oblast", target_group: 1) # Sumy Oblast - Сумська́ о́бласть
+Category.create(name: "Ternopil Oblast", target_group: 1) # Ternopil Oblast - Тернопі́льська о́бласть
+Category.create(name: "Vinnytsia Oblast", target_group: 1) # Vinnytsia Oblast - Ві́нницька о́бласть
+Category.create(name: "Volyn Oblast", target_group: 1) # Volyn Oblast - Воли́нська о́бласть
+Category.create(name: "Zakarpattia Oblast", target_group: 1) # Zakarpattia Oblast - Закарпатська область
+Category.create(name: "Zaporizhzhia Oblast", target_group: 1) # Zaporizhzhia Oblast - Запорізька область
+Category.create(name: "Zhytomyr Oblast", target_group: 1) # Zhytomyr Oblast - Жито́мирська о́бласть
 
 # Aid categories
+Category.create(name: "Accommodation Offers", target_group: 0)
+Category.create(name: "Governmental Support", target_group: 0)
+Category.create(name: "Relief supplies", target_group: 0)
+Category.create(name: "Psychological help", target_group: 0)
+Category.create(name: "Bureaucratic assistance", target_group: 0)
+Category.create(name: "Support for chilldren", target_group: 0)
 
 # "How to help" categories
+Category.create(name: "Donations", target_group: 2)
+Category.create(name: "Shelter", target_group: 0)
+Category.create(name: "Charities", target_group: 0)
+
+# Miscellaneous
+Category.create(name: "Light in the dark", target_group: 0)
+Category.create(name: "Jobs for Ukrainian in Europe", target_group: 0)
+Category.create(name: "Voluntary sanctions", target_group: 0)
+Category.create(name: "Recent news", target_group: 0)
+Category.create(name: "Russian government", target_group: 0)
+Category.create(name: "Ukrainian government", target_group: 0)
+
 
 puts "#{Category.all.length} categories created"
-
-# !!! DELETE FOR PRODUCTION !!!
-puts "Creating team account"
-User.create(email: "example@gmail.com", password: "123456", username: "ukrAID-team", role: 1)
 
 puts "Seeding done!"
