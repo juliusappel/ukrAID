@@ -66,11 +66,11 @@
     <br>
     <!-- Save / Unsave this post to dashboard -->
     <% if current_user.favorited?(@post) %>
-      <%= link_to unsave_post_post_path, method: :post, class: "unsave-btn" do %>
+      <%= link_to unsave_post_post_path(anchor: "bookmark"), method: :post, class: "unsave-btn", id: "bookmark" do %>
         <i class="fas fa-bookmark"></i> Delete bookmark
       <% end %>
     <% else %>
-      <%= link_to save_post_post_path, method: :post, class: "save-btn" do %>
+      <%= link_to save_post_post_path(anchor: "bookmark"), method: :post, class: "save-btn", id: "bookmark" do %>
         <i class="far fa-bookmark"></i> Save post
       <% end %>
     <% end %>
@@ -78,25 +78,25 @@
     <hr>
 
     <!-- Vote functionality -->
-    <div class="voting">
+    <div class="voting" id="voting">
       <% case current_user.voted_as_when_voted_for @post %>
       <% when nil %>
-        <%= link_to upvote_post_post_path, method: :post, class: "upvote-btn" do %>
+        <%= link_to upvote_post_post_path(anchor: "voting"), method: :post, class: "upvote-btn" do %>
           <i class="fas fa-arrow-alt-circle-up"></i> Upvote
         <% end %>
         <div id="vote_score"><%= @post.cached_weighted_score %></div>
-        <%= link_to downvote_post_post_path, method: :post, class: "downvote-btn" do %>
+        <%= link_to downvote_post_post_path(anchor: "voting"), method: :post, class: "downvote-btn" do %>
           Downvote <i class="fas fa-arrow-alt-circle-down"></i>
         <% end %>
       <% when true %>
         <!-- Upvote (Active => no button / different design) -->
         <div class="upvote-btn-blurred"><i class="fas fa-arrow-alt-circle-up"></i> Upvoted</div>
         <div id="vote_score"><%= @post.cached_weighted_score %></div>
-        <%= link_to downvote_post_post_path, method: :post, class: "downvote-btn" do %>
+        <%= link_to downvote_post_post_path(anchor: "voting"), method: :post, class: "downvote-btn" do %>
           Downvote <i class="fas fa-arrow-alt-circle-down"></i>
         <% end %>
       <% when false %>
-        <%= link_to upvote_post_post_path, method: :post, class: "upvote-btn" do %>
+        <%= link_to upvote_post_post_path(anchor: "voting"), method: :post, class: "upvote-btn" do %>
           <i class="fas fa-arrow-alt-circle-up"></i> Upvote
         <% end %>
         <div id="vote_score"><%= @post.cached_weighted_score %></div>
@@ -107,14 +107,14 @@
 
     <!-- Admin actions -->
     <% if current_user.role == 1 %>
-      <div class="admin-action">
+      <div class="admin-action" id="admin-actions">
         <!-- Publish post -->
         <% if @post.pending == true %>
-          <%= link_to publish_post_path, data: { confirm: "Are you sure?" }, method: :post, class: "admin-btn" do %>
+          <%= link_to publish_post_path(anchor: "admin-actions"), data: { confirm: "Are you sure?" }, method: :post, class: "admin-btn" do %>
             <i class="fas fa-upload"></i> Publish Post
           <% end %>
         <% else %>
-          <%= link_to unpublish_post_path, data: { confirm: "Are you sure?" }, method: :post, class: "admin-btn" do %>
+          <%= link_to unpublish_post_path(anchor: "admin-actions"), data: { confirm: "Are you sure?" }, method: :post, class: "admin-btn" do %>
             <i class="fas fa-ban"></i> Unpublish Post
           <% end %>
         <% end %>
