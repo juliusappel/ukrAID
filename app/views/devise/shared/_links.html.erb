@@ -1,5 +1,6 @@
 <%- if controller_name != 'sessions' %>
-  <%= link_to "Login", new_session_path(resource_name) %><br />
+  <%= link_to "Login", new_session_path(resource_name), class: 'admin-btn' %><br />
+  <br>
 <% end %>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
