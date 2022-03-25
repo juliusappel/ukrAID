@@ -79,6 +79,19 @@
   border-radius: 40px;
   padding: 10px;
   padding-right: 0;
+
+  @media only screen and (min-width: 768px) {
+    display: flex;
+    width: 215px;
+    align-items: center;
+    justify-content: center;
+    background: $ukr_blue;
+    height: 50px;
+    border-radius: 40px;
+    padding: 10px;
+    padding-right: 0;
+    transform: none;
+  }
 }
 
 .search-box-active {
