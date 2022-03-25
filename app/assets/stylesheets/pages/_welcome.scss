@@ -56,3 +56,14 @@
     width: 4rem;
   }
 }
+
+// hover effects for desktop
+  @media (hover: hover) {
+    #flag1, #flag2 {
+      transition: .3s;
+    }
+
+    #flag1:hover, #flag2:hover {
+      transform: scale(1.03);
+    }
+  }
