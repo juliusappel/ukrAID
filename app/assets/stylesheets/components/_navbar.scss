@@ -1,5 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
+  align-items: center;
   background: $mainblue;
   padding-top: 25px;
   height: 6rem;
@@ -7,6 +8,9 @@
   position: fixed;
   top: 0;
   z-index: 1;
+  @media only screen and (min-width: 480px) {
+    align-items: flex-start;
+  }
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -64,7 +68,6 @@
       color: $mainblue;
     }
   }
-
 }
 
 .search-box {
@@ -76,57 +79,43 @@
   transform: translate(500px, -49px);
   transition: 1s all ease;
   height: 50px;
-  border-radius: 40px;
-  padding: 10px;
-  padding-right: 0;
+  border-radius: 24px;
+  padding: 10px 0 10px 10px;
 
-  @media only screen and (min-width: 768px) {
-    display: flex;
-    width: 215px;
-    align-items: center;
-    justify-content: center;
-    background: $ukr_blue;
-    height: 50px;
-    border-radius: 40px;
-    padding: 10px;
-    padding-right: 0;
+  @media only screen and (min-width: 480px) {
     transform: none;
   }
 }
 
-.search-box-active {
-  transform: translate(95px, -49px) !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+@media only screen and (max-width: 480px) {
+  .search-box-active {
+    transform: translate(95px, -49px);
+  }
 }
 
 .search-input {
   display: flex;
   align-items: center;
   justify-content: center;
-}
+  .search-txt {
+    border: none;
+    background-color: transparent !important;
+    color: white !important;
+    box-shadow: none !important;
+    outline: none;
+    float: left;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
 
-.search-txt {
-  border: none;
-  background-color: transparent !important;
-  box-shadow: none;
-  color: white !important;
-  box-shadow: none !important;
-  outline: none;
-  float: left;
-  font-size: 16 px;
-  transition: 0.4s;
-  line-height: 40px;
-
-  &::placeholder {
-    color: white;
+    &::placeholder {
+      color: white;
+    }
   }
 }
 
 .search-btn-bar {
   padding-right: 20px;
-  margin-right: 12%;
   margin-bottom: 2%;
   color: white;
   float: right;
@@ -137,6 +126,17 @@
   background: transparent;
   text-decoration: none;
   transition: 0.4s;
+}
+
+.navbar-light .navbar-toggler {
+  margin-right: 1rem;
+  color: rgba(255, 255, 255, 1);
+  border: none;
+  height: 46px;
+
+  .navbar-toggler-icon {
+    filter: invert(1);
+  }
 }
 
 .navbar-collapse {
@@ -154,22 +154,21 @@
 #navbarSupportedContent {
   padding: 0 2rem 2rem 2rem;
   transform: translate(0px, -30px);
+  @media only screen and (min-width: 480px) {
+    transform: none;
+  }
 
   a {
     color: white;
     border-bottom: 0.5px solid white;
+    @media only screen and (min-width: 480px) {
+      text-align: right;
+      transition: .3s;
+      &:hover, &:focus {
+        color: $ukr_blue;
+      }
+    }
   }
-}
-
-.navbar .container-fluid {
-  padding-left: 0;
-  padding-right: 0;
-  z-index: -2;
-}
-
-.navbar-toggler {
-  margin-right: 1rem;
-  border: none;
 }
 
 .category-dropdown {
@@ -183,13 +182,13 @@
   }
 }
 
-.navbar-light .navbar-toggler {
-  color: rgba(255, 255, 255, 1);
-  border-color: transparent;
-}
-
-.navbar-toggler-icon {
-  filter: invert(1);
+@media only screen and (min-width: 480px) {
+  // change order of nav items - to move the search bar in view
+  .nav1 { order: 1; }
+  .nav2 { order: 2; }
+  .nav3 { order: 4; }
+  .nav4 { order: 3; }
+  .nav5 { order: 5; }
 }
 
 .bottom-menu {
@@ -220,16 +219,23 @@
   text-decoration: none;
   font-size: 17px;
   z-index: 10000;
-}
 
-/* Change the color of links on hover */
-.bottom-menu a:hover {
-  background-color: $mainblue;
-  color: white;
+  /* Change the color of links on hover */
+  &:hover {
+    background-color: $mainblue;
+    color: white;
+  }
 }
 
 /* Add a color to the active/current link */
 .menu-active {
   background-color: $mainblue;
   color: white;
+}
+
+// hide the bottom menu on ipad and desktop
+@media only screen and (min-width: 480px) {
+  .bottom-menu {
+    display: none;
+  }
 }
