@@ -5,4 +5,4 @@
 
 - 🌱 Anybody is welcome to contribute to our GitHub repository (https://github.com/juliusappel/ukrAID)
 
-<img alt="Logo ukrAID" src="app/assets/images/logo_sm.webp">
+<img align="center" alt="Logo ukrAID" src="app/assets/images/logo_sm.webp">
