@@ -1,5 +1,5 @@
 .welcome {
-  background-color: $mainblue;
+  background-color: $darknavy;
   width: 100vw;
   height: 100vh;
   margin-top: -6rem;
@@ -13,7 +13,6 @@
   p {
     text-align: center;
     color: white;
-    font-weight: bolder;
     font-size: 20px;
   }
 
@@ -25,25 +24,36 @@
 #question {
   p {
     font-size: 25px;
+    text-transform: uppercase;
   }
 }
 
+.flag {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+  border-radius: 8px;
+}
+
 #flag1 {
-  #flag_top {
-    background-color: $ukr_blue;
+  .flag-half {
     height: 3.5rem;
     width: 12rem;
   }
 
-  #flag_bottom {
+  .flag-top {
+    background-color: $ukr_blue;
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+  }
+
+  .flag-bottom {
     background-color: $ukr_yellow;
-    height: 3.5rem;
-    width: 12rem;
+    border-bottom-left-radius: inherit;
+    border-bottom-right-radius: inherit;
   }
 }
 
 #flag2 {
-  #flag_bg {
+  .world-flag {
     background-color: $navy;
     height: 7rem;
     width: 12rem;
@@ -59,11 +69,11 @@
 
 // hover effects for desktop
   @media (hover: hover) {
-    #flag1, #flag2 {
+    .flag {
       transition: .3s;
-    }
 
-    #flag1:hover, #flag2:hover {
-      transform: scale(1.03);
+      &:hover {
+        transform: scale(1.06);
+      }
     }
   }

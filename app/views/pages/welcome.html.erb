@@ -10,10 +10,10 @@
   <%= link_to home_path(:location => "ukraine") do %>
     <div>
       <div id="flag1">
-        <p>Ukraine / Україна</p>
-        <div id="flag_top">
-        </div>
-        <div id="flag_bottom">
+        <p>Ukraine | Україна</p>
+        <div class="flag">
+          <div class="flag-half flag-top"></div>
+          <div class="flag-half flag-bottom"></div>
         </div>
       </div>
     </div>
@@ -21,8 +21,8 @@
   <%= link_to home_path(:location => "world") do %>
     <div>
       <div id="flag2">
-        <p>Rest of the world</p>
-        <div id="flag_bg">
+        <p>Rest of the World</p>
+        <div class="flag world-flag">
           <%= image_tag 'logo_sm.webp' %>
         </div>
       </div>
