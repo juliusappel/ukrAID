@@ -1,11 +1,23 @@
 .about-page {
-    display: block;
-    margin: 0 auto;
-    text-align: center;
+  display: block;
+  padding: 24px;
+  text-align: center;
+  color: $navy;
+
+  h1 {
+    font-weight: 700;
+  }
 
   .logo-ukr {
     display: block;
     margin: 0 auto;
     width: 60px;
+  }
+}
+
+@media only screen and (min-width: 480px) {
+  .about-page {
+    width: 60vw;
+    margin: 0 auto;
   }
 }
