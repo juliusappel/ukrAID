@@ -1,31 +1,14 @@
 .welcome {
-  position: relative;
   background-color: $mainblue;
   width: 100vw;
   height: 100vh;
   margin-top: -6rem;
   margin-bottom: -6.3rem;
-}
-
-#question {
-  position: absolute;
-  top: 20%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  p {
-    color: white;
-    font-size: 25px;
-    font-weight: bolder;
-    text-align: center;
-  }
-}
-
-#flag1 {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
 
   p {
     text-align: center;
@@ -34,6 +17,18 @@
     font-size: 20px;
   }
 
+  a {
+    text-decoration: none;
+  }
+}
+
+#question {
+  p {
+    font-size: 25px;
+  }
+}
+
+#flag1 {
   #flag_top {
     background-color: $ukr_blue;
     height: 3.5rem;
@@ -48,29 +43,27 @@
 }
 
 #flag2 {
-  position: absolute;
-  top: 70%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  p {
-    text-align: center;
-    color: white;
-    font-weight: bolder;
-    font-size: 20px;
-  }
-
   #flag_bg {
     background-color: $navy;
     height: 7rem;
     width: 12rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   img {
-    position: absolute;
     width: 4rem;
-    top: 6.4rem;
-    left: 5.8rem;
-    transform: translate(-50%, -50%);
   }
 }
+
+// hover effects for desktop
+  @media (hover: hover) {
+    #flag1, #flag2 {
+      transition: .3s;
+    }
+
+    #flag1:hover, #flag2:hover {
+      transform: scale(1.03);
+    }
+  }
