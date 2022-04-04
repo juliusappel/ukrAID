@@ -1,13 +1,6 @@
 .forms {
-  background-color: white;
-  margin: 0 auto;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  margin-top: 1rem;
-  padding: 1rem;
   color: $navy;
-  border-radius: 10px;
-  margin-bottom: 6.5rem;
+  padding: 2rem;
   // box-shadow: 0px 2px 4px 4px rgba(192, 192, 192, 0.1);
 
   h1 {
@@ -20,7 +13,14 @@
   }
 
   input {
-    border-radius: 10px;
+    border-radius: 8px;
+  }
+}
+
+@media only screen and (min-width: 480px) {
+  .forms {
+    width: 60vw;
+    margin: 0 auto;
   }
 }
 

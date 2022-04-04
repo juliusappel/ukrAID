@@ -17,14 +17,24 @@
   background-color: $ukr_yellow;
   padding: 1rem;
   width: 100%;
-  border-radius: 10px;
+  border-radius: 8px;
   text-decoration: none;
   cursor: pointer;
   text-align: center;
   color: $navy;
-  font-weight: bolder;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
 }
+
+@media (hover: hover) {
+    .save-btn {
+      transition: .3s;
+
+      &:hover {
+        background-color: #F5CC00;
+      }
+    }
+  }
 
 .voting {
   display: flex;
@@ -75,18 +85,23 @@
 }
 
 .admin-btn {
-  border: solid 1px $navy;
-  padding: 6px 12px;
-  border-radius: 10px;
-  color: $navy;
+  border: solid 1px $datecolor;
+  padding: 8px 16px;
+  border-radius: 8px;
+  color: $datecolor;
   text-decoration: none;
-  background-color: rgba($color: #FFFFFF, $alpha: 0.9);
   transition: 0.3s;
 }
 
-.admin-btn:hover {
-  background-color: rgba($color: #FFFFFF, $alpha: 0.3);
-  color: white;
+@media (hover: hover) {
+  .admin-btn {
+    transition: .3s;
+
+    &:hover {
+      border: solid 1px $navy;
+      color: $navy;
+    }
+  }
 }
 
 .mari {
