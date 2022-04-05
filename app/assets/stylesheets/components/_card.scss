@@ -47,15 +47,6 @@
 }
 
 .card-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 0.5rem;
-
-  .card-left {
-    overflow: hidden;
-    text-overflow: ellipsis;
-
     h4 {
       font-size: 16px;
       font-weight: bolder;
@@ -67,7 +58,7 @@
       margin-bottom: 0.5rem;
     }
 
-    span.card-txt {
+    span {
       font-size: 12px;
       color: $datecolor;
 
@@ -75,27 +66,14 @@
         overflow: hidden;
         display: -webkit-inline-box;
         -webkit-box-orient: vertical;
-        -webkit-line-clamp: 1;
-      }
-    }
-
-    span.card-txt-with-img {
-      .trix-content {
-        -webkit-line-clamp: 1;
-      }
-    }
-
-    span.card-txt-without-img {
-      .trix-content {
         -webkit-line-clamp: 2;
       }
     }
-  }
 
-  img {
-    border-radius: 50%;
-    height: 80px;
-    width: 80px;
-    object-fit: cover;
+    img {
+      border-radius: 50%;
+      height: 80px;
+      width: 80px;
+      object-fit: cover;
+    }
   }
-}

@@ -12,26 +12,9 @@
           </div>
         </div>
         <div class="card-content">
-          <% if post.photos.attached? %>
-            <div class="card-left">
-              <h4><%= post.title %></h4>
-              <p><%= post.created_at %></p>
-              <span class="card-txt card-txt-with-img"><%= post.rich_content %></span>
-            </div>
-            <%= cl_image_tag post.photos.first.key, { loading: "lazy", width: "100%", alt: post.title,
-                              :transformation=>[
-                              { :aspect_ratio=>"16:9", :crop=>"fill", :gravity=>"auto:subject" },
-                              { :dpr=>"auto", :responsive => true },
-                              { :fetch_format=>:auto, :quality=>"auto:low" },
-                              { :flags=>"lossy" },
-                              ]} %>
-          <% else %>
-            <div class="card-left">
-              <h4><%= post.title %></h4>
-              <p><%= post.created_at %></p>
-              <span class="card-txt card-txt-without-img"><%= post.rich_content %></span>
-            </div>
-          <% end %>
+          <h4><%= post.title %></h4>
+          <p><%= post.created_at %></p>
+          <span><%= post.rich_content %></span>
         </div>
       </div></li>
       <% end %>
