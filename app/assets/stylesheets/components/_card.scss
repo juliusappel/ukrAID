@@ -77,3 +77,18 @@
       object-fit: cover;
     }
   }
+
+@media only screen and (min-width: 480px) {
+  .cards {
+    width: 60vw;
+    margin: 0 auto;
+  }
+
+  .feed-card {
+    transition: .3s;
+
+    &:hover {
+      background-color: #EBF4FF;
+    }
+  }
+}
