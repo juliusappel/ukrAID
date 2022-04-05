@@ -2,21 +2,7 @@
   <ul class="card-list">
     <% @posts.each do |post| %>
       <%= link_to post_path(post) do %>
-      <li><div class="card">
-        <h4><%= post.title %></h4>
-        <p><%= post.created_at %></p>
-        <% if post.photos.attached? %>
-          <span class="with-image"><%= post.rich_content %></span>
-          <%= cl_image_tag post.photos.first.key, { loading: "lazy", width: "100%", alt: post.title,
-                            :transformation=>[
-                            { :aspect_ratio=>"16:9", :crop=>"fill", :gravity=>"auto:subject" },
-                            { :dpr=>"auto", :responsive => true },
-                            { :fetch_format=>:auto, :quality=>"auto:low" },
-                            { :flags=>"lossy" },
-                            ]} %>
-        <% else %>
-          <span class="no-image"><%= post.rich_content %></span>
-        <% end %>
+      <li><div class="feed-card">
         <div class="iconset">
           <!-- <% if post.categories.present? %>
             <div id="ctgry"><%= post.categories[0].name %></div>
@@ -24,6 +10,28 @@
           <div id="vote_score">
             <i class="fas fa-arrow-alt-circle-up"></i> <%= post.cached_weighted_score %>
           </div>
+        </div>
+        <div class="card-content">
+          <% if post.photos.attached? %>
+            <div class="card-left">
+              <h4><%= post.title %></h4>
+              <p><%= post.created_at %></p>
+              <span class="card-txt card-txt-with-img"><%= post.rich_content %></span>
+            </div>
+            <%= cl_image_tag post.photos.first.key, { loading: "lazy", width: "100%", alt: post.title,
+                              :transformation=>[
+                              { :aspect_ratio=>"16:9", :crop=>"fill", :gravity=>"auto:subject" },
+                              { :dpr=>"auto", :responsive => true },
+                              { :fetch_format=>:auto, :quality=>"auto:low" },
+                              { :flags=>"lossy" },
+                              ]} %>
+          <% else %>
+            <div class="card-left">
+              <h4><%= post.title %></h4>
+              <p><%= post.created_at %></p>
+              <span class="card-txt card-txt-without-img"><%= post.rich_content %></span>
+            </div>
+          <% end %>
         </div>
       </div></li>
       <% end %>

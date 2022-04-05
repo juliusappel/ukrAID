@@ -10,60 +10,27 @@
   padding: 0;
 }
 
-.card {
-  position: relative;
-  background-color: white;
-  padding: 1rem;
-  border-radius: 15px;
-  height: 140px;
-  margin-bottom: 0.5rem;
-  border: 0px solid white;
-  box-shadow: 0px 2px 4px 4px rgba(192, 192, 192, 0.1);
+.feed-card {
+  height: 156px;
   color: $navy;
-
-  h4 {
-    font-size: 16px;
-    font-weight: bolder;
-    margin-bottom: 0.2rem;
-    width: 90%;
-  }
-
-  p {
-    margin: 0;
-    font-size: 10px;
-    color: $datecolor;
-    margin-top: -0.2rem;
-  }
-
-  .with-image {
-    width: 60%;
-    margin: 0;
-    margin-top: 0.2rem;
-    font-size: 12px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-  }
-
-  .no-image {
-    margin: 0;
-    margin-top: 0.2rem;
-    font-size: 12px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    max-lines: 3;
-  }
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-top: 1px $datecolor solid;
+  border-bottom: 1px $datecolor solid;
+  margin-bottom: -1px;
 
   .iconset {
     display: flex;
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-    height: auto;
 
     #vote_score {
       background-color: $ukr_yellow;
       padding: 0.1rem 0.6rem;
-      border-radius: 15px;
+      border-radius: 8px;
       font-weight: bolder;
       font-size: 12px;
     }
@@ -77,14 +44,58 @@
       border: 1px solid rgb(221, 221, 221);
     }
   }
+}
+
+.card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+
+  .card-left {
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    h4 {
+      font-size: 16px;
+      font-weight: bolder;
+    }
+
+    p {
+      font-size: 10px;
+      color: $datecolor;
+      margin-bottom: 0.5rem;
+    }
+
+    span.card-txt {
+      font-size: 12px;
+      color: $datecolor;
+
+      .trix-content {
+        overflow: hidden;
+        display: -webkit-inline-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+      }
+    }
+
+    span.card-txt-with-img {
+      .trix-content {
+        -webkit-line-clamp: 1;
+      }
+    }
+
+    span.card-txt-without-img {
+      .trix-content {
+        -webkit-line-clamp: 2;
+      }
+    }
+  }
 
   img {
-    position: absolute;
-    border-radius: 10px;
-    height: 93px;
-    bottom: 0.5rem;
-    right: 0.5rem;
-    width: 35%;
+    border-radius: 50%;
+    height: 80px;
+    width: 80px;
     object-fit: cover;
   }
 }
