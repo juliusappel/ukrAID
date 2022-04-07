@@ -8,45 +8,51 @@
 .card-list {
   margin: 0;
   padding: 0;
-}
 
-.feed-card {
-  height: 156px;
-  color: $navy;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 0.5rem;
-  padding: 0.5rem;
-  border-top: 1px $datecolor solid;
-  border-bottom: 1px $datecolor solid;
-  margin-bottom: -1px;
-
-  .iconset {
-    display: flex;
-
-    #vote_score {
-      background-color: $ukr_yellow;
-      padding: 0.1rem 0.6rem;
-      border-radius: 8px;
-      font-weight: bolder;
-      font-size: 12px;
-    }
-
-    #ctgry {
-      background-color: $lightblue;
-      margin-right: 0.3rem;
-      padding: 0.1rem 0.4rem;
-      border-radius: 15px;
-      font-size: 12px;
-      border: 1px solid rgb(221, 221, 221);
-    }
+  a {
+    color: $navy;
   }
 }
 
-.card-content {
+.feed-card {
+  height: 152px;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  background-color: white;
+
+  .card-content {
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    .iconset {
+      display: flex;
+      margin-bottom: 0.5rem;
+
+      #vote_score {
+        background-color: $ukr_yellow;
+        padding: 0.1rem 0.6rem;
+        border-radius: 8px;
+        font-weight: bolder;
+        font-size: 12px;
+      }
+
+      #ctgry {
+        background-color: $lightblue;
+        margin-right: 0.3rem;
+        padding: 0.1rem 0.4rem;
+        border-radius: 15px;
+        font-size: 12px;
+        border: 1px solid rgb(221, 221, 221);
+      }
+    }
+
     h4 {
       font-size: 16px;
       font-weight: bolder;
@@ -66,17 +72,19 @@
         overflow: hidden;
         display: -webkit-inline-box;
         -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2;
+        -webkit-line-clamp: 1;
       }
     }
-
-    img {
-      border-radius: 50%;
-      height: 80px;
-      width: 80px;
-      object-fit: cover;
-    }
   }
+
+  img {
+    border-radius: 8px;
+    height: 152px;
+    width: 96px;
+    object-fit: cover;
+    clip-path: polygon(28% 0, 100% 0%, 100% 100%, 8% 100%);
+  }
+}
 
 @media only screen and (min-width: 480px) {
   .cards {
