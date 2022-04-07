@@ -82,7 +82,7 @@
     height: 152px;
     width: 96px;
     object-fit: cover;
-    clip-path: polygon(28% 0, 100% 0%, 100% 100%, 8% 100%);
+    clip-path: polygon(24% 0, 100% 0%, 100% 100%, 4% 100%);
   }
 }
 
@@ -93,10 +93,15 @@
   }
 
   .feed-card {
-    transition: .3s;
+    // transition: .3s;
+    img {
+      transition: .3s;
+    }
 
     &:hover {
-      background-color: #EBF4FF;
+      img {
+        width: 160px;
+      }
     }
   }
 }

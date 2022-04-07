@@ -31,7 +31,7 @@
       transition: .3s;
 
       &:hover {
-        background-color: #F5CC00;
+        background-color: #E0BB00;
         color: $navy;
       }
     }
@@ -105,8 +105,8 @@
     transition: .3s;
 
     &:hover {
-      border: solid 1px $navy;
-      color: $navy;
+      border: solid 1px white;
+      color: white;
     }
   }
 }

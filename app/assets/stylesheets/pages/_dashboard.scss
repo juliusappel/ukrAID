@@ -1,12 +1,9 @@
 .dashboard-head {
-  position: relative;
   background-color: $navy;
   padding: 1rem;
   color: white;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-  margin-bottom: 0.5rem;
-  border-radius: 0 0 15px 15px;
+  margin: 0.5rem;
+  border-radius: 8px;
 
   .userinfo {
     display: flex;
@@ -21,6 +18,10 @@
   span {
     color: $ukr_yellow;
     font-size: 16px;
+    transition: .3s;
+    &:hover {
+      color: #E0BB00;
+    }
   }
 
   h1 {
@@ -53,8 +54,6 @@
   }
 }
 
-
-
 .dash-buttons {
   margin-bottom: 0.5rem;
   flex-flow: row wrap;
@@ -69,16 +68,8 @@
     text-decoration: none;
   }
 
-  h1 {
-    color: white;
-    font-weight: bolder;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    margin-left: 0.5rem;
-  }
-
-  h2 {
-    color: white;
+  h1, h2 {
+    color: $navy;
     font-weight: bolder;
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -86,14 +77,14 @@
   }
 
   h5 {
-    color: white;
+    color: $ukr_blue;
     margin-top: 1rem;
     margin-bottom: 1rem;
     margin-left: 0.5rem;
   }
 
   #post-info {
-    color: lightgray;
+    color: $datecolor;
     margin-left: 0.5rem;
   }
 
@@ -123,5 +114,12 @@
     height: 6.5rem;
     margin-top: -6.5rem;
     visibility: hidden;
+  }
+}
+
+@media only screen and (min-width: 480px) {
+  .dashboard-head, .dashboard {
+    width: 60vw;
+    margin: 1rem auto;
   }
 }
