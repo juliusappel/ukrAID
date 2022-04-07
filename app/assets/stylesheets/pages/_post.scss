@@ -1,13 +1,9 @@
 .post {
   background-color: white;
-  margin: 0 auto;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  margin-top: 1rem;
+  margin: 1rem;
   padding: 1rem;
   color: $navy;
-  border-radius: 10px;
-  margin-bottom: 4rem;
+  border-radius: 8px;
 
   p {
     margin-top: -0.5rem;
@@ -17,7 +13,7 @@
   }
 
   img {
-    border-radius: 10px;
+    border-radius: 8px;
   }
 
   h1 {
@@ -25,19 +21,10 @@
   }
 }
 
-#post-photo {
-  // position: relative;
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 1rem;
-}
-
 .icons {
   display: flex;
   flex-flow: row wrap;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 
   a {
     text-decoration: none;
@@ -70,8 +57,7 @@
 }
 
 .contact-details {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin: 0 0 1rem 0;
 }
 
 .btn-cta {
@@ -127,4 +113,11 @@
 .new-user-notice a:hover {
   color: $ukr_yellow;
   font-weight: 900;
+}
+
+@media only screen and (min-width: 480px) {
+  .post {
+    width: 60vw;
+    margin: 1rem auto;
+  }
 }

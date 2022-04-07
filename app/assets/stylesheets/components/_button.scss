@@ -32,6 +32,7 @@
 
       &:hover {
         background-color: #F5CC00;
+        color: $navy;
       }
     }
   }
@@ -39,16 +40,14 @@
 .voting {
   display: flex;
   width: 100%;
-  align-items: stretch;
-  margin-bottom: 2rem;
-  margin-top: 2rem;
+  margin: 1rem 0;
 
   a {
     text-decoration: none;
   }
 
   #vote_score {
-    flex-grow: 1;
+    width: 20%;
     background-color: lightgray;
     color: $navy;
     padding: 1rem;
@@ -58,29 +57,37 @@
   .upvote-btn {
     background-color: rgb(75, 160, 75);
     color: white;
-    border-radius: 10px 0 0 10px;
-    padding: 1rem;
+    border-radius: 8px 0 0 8px;
+    padding: 1rem 0.5rem;
+    width: 40%;
+    text-align: center;
+    transition: .3s;
+    &:hover {
+      background-color: #3B7D3B;
+    }
   }
 
   .upvote-btn-blurred {
     background-color: rgb(67, 104, 67);
     color: lightgray;
-    border-radius: 10px 0 0 10px;
-    padding: 1rem;
   }
 
   .downvote-btn {
     background-color: rgb(214, 77, 77);
     color: white;
-    border-radius: 0 10px 10px 0;
-    padding: 1rem;
+    border-radius: 0 8px 8px 0;
+    padding: 1rem 0.5rem;
+    width: 40%;
+    text-align: center;
+    transition: .3s;
+    &:hover {
+      background-color: rgb(136, 72, 72);
+    }
   }
 
   .downvote-btn-blurred {
-    background-color: rgb(136, 72, 72);
+    background-color: #C82D2D;
     color: lightgray;
-    border-radius: 0 10px 10px 0;
-    padding: 1rem;
   }
 }
 
