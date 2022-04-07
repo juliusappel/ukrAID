@@ -34,7 +34,7 @@
   .upvotes {
     background-color: $ukr_yellow;
     padding: 0.1rem 0.6rem;
-    border-radius: 15px;
+    border-radius: 8px;
     font-weight: bolder;
     font-size: 12px;
     margin-right: 0.4rem;
@@ -45,7 +45,7 @@
     background-color: #eff3f8;
     margin-right: 0.3rem;
     padding: 0.1rem 0.4rem;
-    border-radius: 15px;
+    border-radius: 8px;
     font-size: 12px;
     border: 1px solid rgb(221, 221, 221);
     margin-bottom: 0.4rem;
@@ -53,7 +53,7 @@
 }
 
 .mapboxgl-map {
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 .contact-details {
@@ -63,7 +63,7 @@
 .btn-cta {
     background-color: $lightblue;
     padding: 5px 10px;
-    border-radius: 10px;
+    border-radius: 8px;
     text-decoration: none;
     color: $navy;
     border: 1px solid rgb(221, 221, 221);
@@ -79,7 +79,7 @@
 .btn-cta-call {
     background-color: $ukr_yellow;
     padding: 5px 10px;
-    border-radius: 10px;
+    border-radius: 8px;
     text-decoration: none;
     color: $navy;
     border: 1px solid rgb(221, 221, 221);
@@ -97,7 +97,7 @@
   justify-content: space-between;
   background-color: $mainblue;
   padding: 1rem;
-  border-radius: 0 0 10px 10px;
+  border-radius: 0 0 8px 8px;
   margin: -1rem;
 }
 

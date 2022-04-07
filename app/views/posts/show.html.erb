@@ -81,27 +81,27 @@
     <div class="voting" id="voting">
       <% case current_user.voted_as_when_voted_for @post %>
       <% when nil %>
-        <%= link_to upvote_post_post_path(anchor: "voting"), method: :post, class: "upvote-btn" do %>
+        <%= link_to upvote_post_post_path(anchor: "voting"), method: :post, class: "vote-btn upvote-btn" do %>
           <i class="fas fa-arrow-alt-circle-up"></i> Upvote
         <% end %>
         <div id="vote_score"><%= @post.cached_weighted_score %></div>
-        <%= link_to downvote_post_post_path(anchor: "voting"), method: :post, class: "downvote-btn" do %>
+        <%= link_to downvote_post_post_path(anchor: "voting"), method: :post, class: "vote-btn downvote-btn" do %>
           Downvote <i class="fas fa-arrow-alt-circle-down"></i>
         <% end %>
       <% when true %>
         <!-- Upvote (Active => no button / different design) -->
-        <div class="upvote-btn upvote-btn-blurred"><i class="fas fa-arrow-alt-circle-up"></i> Upvoted</div>
+        <div class="vote-btn upvote-btn upvote-btn-blurred"><i class="fas fa-arrow-alt-circle-up"></i> Upvoted</div>
         <div id="vote_score"><%= @post.cached_weighted_score %></div>
-        <%= link_to downvote_post_post_path(anchor: "voting"), method: :post, class: "downvote-btn" do %>
+        <%= link_to downvote_post_post_path(anchor: "voting"), method: :post, class: "vote-btn downvote-btn" do %>
           Downvote <i class="fas fa-arrow-alt-circle-down"></i>
         <% end %>
       <% when false %>
-        <%= link_to upvote_post_post_path(anchor: "voting"), method: :post, class: "upvote-btn" do %>
+        <%= link_to upvote_post_post_path(anchor: "voting"), method: :post, class: "vote-btn upvote-btn" do %>
           <i class="fas fa-arrow-alt-circle-up"></i> Upvote
         <% end %>
         <div id="vote_score"><%= @post.cached_weighted_score %></div>
         <!-- Downvote (Active => no button / different design) -->
-        <div class="downvote-btn downvote-btn-blurred">Downvoted <i class="fas fa-arrow-alt-circle-down"></i></div>
+        <div class="vote-btn downvote-btn downvote-btn-blurred">Downvoted <i class="fas fa-arrow-alt-circle-down"></i></div>
       <% end %>
     </div>
 
