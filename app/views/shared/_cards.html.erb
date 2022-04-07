@@ -2,30 +2,32 @@
   <ul class="card-list">
     <% @posts.each do |post| %>
       <%= link_to post_path(post) do %>
-      <li><div class="card">
-        <h4><%= post.title %></h4>
-        <p><%= post.created_at %></p>
-        <% if post.photos.attached? %>
-          <span class="with-image"><%= post.rich_content %></span>
-          <%= cl_image_tag post.photos.first.key, { loading: "lazy", width: "100%", alt: post.title,
-                            :transformation=>[
-                            { :aspect_ratio=>"16:9", :crop=>"fill", :gravity=>"auto:subject" },
-                            { :dpr=>"auto", :responsive => true },
-                            { :fetch_format=>:auto, :quality=>"auto:low" },
-                            { :flags=>"lossy" },
-                            ]} %>
-        <% else %>
-          <span class="no-image"><%= post.rich_content %></span>
-        <% end %>
-        <div class="iconset">
-          <!-- <% if post.categories.present? %>
-            <div id="ctgry"><%= post.categories[0].name %></div>
-          <% end %> !-->
-          <div id="vote_score">
-            <i class="fas fa-arrow-alt-circle-up"></i> <%= post.cached_weighted_score %>
+        <li>
+          <div class="feed-card">
+            <div class="card-content">
+              <div class="iconset">
+                <!-- <% if post.categories.present? %>
+                  <div id="ctgry"><%= post.categories[0].name %></div>
+                <% end %> !-->
+                <div id="vote_score">
+                  <i class="fas fa-arrow-alt-circle-up"></i> <%= post.cached_weighted_score %>
+                </div>
+              </div>
+              <h4><%= post.title %></h4>
+              <p><%= post.created_at %></p>
+              <span><%= post.rich_content %></span>
+            </div>
+            <% if post.photos.attached? %>
+              <%= cl_image_tag post.photos.first.key, { loading: "lazy", width: "100%", alt: post.title,
+                                :transformation=>[
+                                { :aspect_ratio=>"16:9", :crop=>"fill", :gravity=>"auto:subject" },
+                                { :dpr=>"auto", :responsive => true },
+                                { :fetch_format=>:auto, :quality=>"auto:low" },
+                                { :flags=>"lossy" },
+                                ]} %>
+            <% end %>
           </div>
-        </div>
-      </div></li>
+        </li>
       <% end %>
     <% end %>
   </ul>
