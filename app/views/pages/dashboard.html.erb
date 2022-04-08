@@ -45,7 +45,7 @@
   <hr>
 
   <div class="dashboard-card">
-    <h2 id="saved">Saved posts (<%= @saved_posts.length unless @saved_posts.nil? %>)</h2>
+    <h2 id="saved">Saved Posts (<%= @saved_posts.length unless @saved_posts.nil? %>)</h2>
     <% if @saved_posts.any? %>
       <% @posts = @saved_posts %>
       <%= render 'shared/cards' %>
