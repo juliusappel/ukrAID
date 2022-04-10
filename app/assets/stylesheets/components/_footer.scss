@@ -1,0 +1,47 @@
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+
+  p {
+    font-size: 12px;
+    color: $background;
+    margin-bottom: 0.2rem;
+
+    a {
+      text-decoration: none;
+      color: $background;
+      transition: .3s;
+
+      &:hover {
+        color: $ukr_blue;
+      }
+    }
+  }
+
+  .footer-links {
+    margin-bottom: 0.5rem;
+
+    a {
+      text-decoration: none;
+      color: $background;
+      transition: .3s;
+      i {
+        font-size: 24px;
+      }
+      &:hover {
+        color: $ukr_blue;
+        cursor: pointer;
+      }
+    }
+
+  }
+}
+
+// hide the footer on mobile
+@media only screen and (max-width: 480px) {
+  .footer {
+    display: none;
+  }
+}

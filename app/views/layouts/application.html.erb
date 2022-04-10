@@ -49,6 +49,11 @@
         <%= render 'shared/bottom-menu' %>
       <% end %>
 
+      <!-- FOOTER !-->
+      <% unless action_name == 'welcome' %>
+        <%= render 'shared/footer' %>
+      <% end %>
+
     </div>
   </body>
 </html>
